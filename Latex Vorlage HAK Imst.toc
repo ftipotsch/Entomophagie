@@ -31,6 +31,7 @@
 \contentsline {section}{\numberline {4.1}Technologie f\IeC {\"u}r Webapp}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Yii2}{22}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Was ist Yii}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Alternativen f\IeC {\"u}r Yii}{22}{subsection.4.2.2}
 \contentsline {chapter}{\numberline {5}Problemanalyse}{23}{chapter.5}
 \contentsline {section}{\numberline {5.1}USE-Case-Analyse}{23}{section.5.1}
 \contentsline {section}{\numberline {5.2}Domain-Class-Modelling}{24}{section.5.2}

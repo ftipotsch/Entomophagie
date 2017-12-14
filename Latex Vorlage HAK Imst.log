@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.11)  14 DEC 2017 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.11)  14 DEC 2017 14:27
 entering extended mode
 **"./Latex Vorlage HAK Imst.tex"
 ("Latex Vorlage HAK Imst.tex"
@@ -1970,20 +1970,24 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 Package natbib Warning: Citation `https://en.wikipedia.org/wiki/Web_2.0' on pag
-e 21 undefined on input line 11.
+e 21 undefined on input line 12.
 
-)
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 91.
+(babel)             in language  on input line 13.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 91.
- [21
+(babel)             in language  on input line 13.
+[21
 
 ]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 13.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 13.
+)
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 92.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2319,18 +2323,24 @@ Package cleveref Info: loaded `ngerman' language definitions on input line 21.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
-Package rerunfilecheck Info: File `"Latex Vorlage HAK Imst".out' has not change
-d.
-(rerunfilecheck)             Checksum: 25C0FE88F740C8B2F3B63884361D0705;3811.
 
+
+Package rerunfilecheck Warning: File `"Latex Vorlage HAK Imst".out' has changed
+.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Latex Vorlage HAK Imst".out':
+(rerunfilecheck)             Before: 25C0FE88F740C8B2F3B63884361D0705;3811
+(rerunfilecheck)             After:  9E375BA89AFCECB9B2946469C5F497F9;3889.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 25856 strings out of 493312
- 474203 string characters out of 3138901
+ 25857 strings out of 493312
+ 474219 string characters out of 3138901
  683926 words of memory out of 3000000
  28798 multiletter control sequences out of 15000+200000
  66197 words of font info for 50 fonts, out of 3000000 for 9000
@@ -2345,9 +2355,9 @@ fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on "Latex Vorlage HAK Imst.pdf" (39 pages, 369305 bytes).
+Output written on "Latex Vorlage HAK Imst.pdf" (39 pages, 369729 bytes).
 PDF statistics:
- 558 PDF objects out of 1000 (max. 8388607)
- 113 named destinations out of 1000 (max. 500000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
  495 words of extra memory for PDF output out of 10000 (max. 10000000)
 
