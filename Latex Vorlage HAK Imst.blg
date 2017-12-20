@@ -1,5 +1,13 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Latex Vorlage HAK Imst.aux
 The style file: dinat.bst
 Database file #1: Literatur_Verzeichnis.bib
-Warning--empty pages in beer_rudolf_aspekte_2011
-(There was 1 warning)
+Warning--to sort, need author or key in Web2
+Warning--to sort, need author or key in Gas
+Warning--to sort, need author or key in Datasheet
+Warning--empty author in Gas
+Warning--there's no year in Gas
+Warning--empty author in Datasheet
+Warning--there's no year in Datasheet
+Warning--empty author in Web2
+Warning--there's no year in Web2
+(There were 9 warnings)
