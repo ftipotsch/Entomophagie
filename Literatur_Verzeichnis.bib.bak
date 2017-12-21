@@ -18,10 +18,4 @@
   url    = {https://www.mouser.com/ds/2/321/605-00008-MQ-2-Datasheet-370464.pdf},
 }
 
-@Misc{Pure_MVC,
-  author = {PureMVC},
-  title  = {Implementation Idioms and Best Practices},
-  url    = {http://puremvc.org/},
-}
-
 @Comment{jabref-meta: databaseType:bibtex;}

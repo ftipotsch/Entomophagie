@@ -30,41 +30,35 @@
 \BOOKMARK [1][-]{section.4.1}{Technologie f\374r Webapp}{chapter.4}% 30
 \BOOKMARK [1][-]{section.4.2}{Yii2}{chapter.4}% 31
 \BOOKMARK [2][-]{subsection.4.2.1}{Was ist Yii}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.2}{Alternativen f\374r Yii}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.2}{Alternativen f\374r Frameworks}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.3}{Warum haben wir uns f\374r YII2 entschieden}{section.4.2}% 34
-\BOOKMARK [1][-]{section.4.3}{Gas-Sensoren}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.3.1}{MQ Gas Sensoren}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.2}{Adafruit CCS811}{section.4.3}% 37
-\BOOKMARK [0][-]{chapter.5}{Problemanalyse}{}% 38
-\BOOKMARK [1][-]{section.5.1}{USE-Case-Analyse}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.2}{Domain-Class-Modelling}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.3}{User-Interface-Design}{chapter.5}% 41
-\BOOKMARK [0][-]{chapter.6}{Systementwurf}{}% 42
-\BOOKMARK [1][-]{section.6.1}{Architektur}{chapter.6}% 43
-\BOOKMARK [2][-]{subsection.6.1.1}{Design der Komponenten}{section.6.1}% 44
-\BOOKMARK [2][-]{subsection.6.1.2}{Benutzerschnittstellen}{section.6.1}% 45
-\BOOKMARK [2][-]{subsection.6.1.3}{Datenhaltunskonzept}{section.6.1}% 46
-\BOOKMARK [2][-]{subsection.6.1.4}{Konzept f\374r Ausnahmebehandlung}{section.6.1}% 47
-\BOOKMARK [2][-]{subsection.6.1.5}{Sicherheitskonzept}{section.6.1}% 48
-\BOOKMARK [2][-]{subsection.6.1.6}{Design der Testumgebung}{section.6.1}% 49
-\BOOKMARK [2][-]{subsection.6.1.7}{Desing der Ausf\374hrungsumgebung}{section.6.1}% 50
-\BOOKMARK [1][-]{section.6.2}{Detailentwurf}{chapter.6}% 51
-\BOOKMARK [0][-]{chapter.7}{Implementierung}{}% 52
-\BOOKMARK [1][-]{section.7.1}{Handy-App}{chapter.7}% 53
-\BOOKMARK [0][-]{chapter.8}{Deployment}{}% 54
-\BOOKMARK [0][-]{chapter.9}{Tests}{}% 55
-\BOOKMARK [1][-]{section.9.1}{Systemtests}{chapter.9}% 56
-\BOOKMARK [1][-]{section.9.2}{Akzeptanztests}{chapter.9}% 57
-\BOOKMARK [0][-]{chapter.10}{Projektevaluation}{}% 58
-\BOOKMARK [0][-]{chapter.11}{Benutzerhandbuch}{}% 59
-\BOOKMARK [0][-]{chapter.12}{Betriebswirtschaftlicher Kontext}{}% 60
-\BOOKMARK [0][-]{chapter.13}{Zusammenfassung}{}% 61
-\BOOKMARK [0][-]{chapter.14}{Beispielkapitel}{}% 62
-\BOOKMARK [1][-]{section.14.1}{Beispiele zitieren}{chapter.14}% 63
-\BOOKMARK [2][-]{subsection.14.1.1}{Beispiele Abbildungen}{section.14.1}% 64
-\BOOKMARK [1][-]{section.14.2}{Beispiele Listen}{chapter.14}% 65
-\BOOKMARK [1][-]{section.14.3}{Beispiel Codesequenz}{chapter.14}% 66
-\BOOKMARK [2][-]{subsection.14.3.1}{Quicksort in JAVA}{section.14.3}% 67
-\BOOKMARK [1][-]{section.14.4}{Beispieltext}{chapter.14}% 68
-\BOOKMARK [0][-]{chapter*.15}{Literaturverzeichnis}{}% 69
-\BOOKMARK [1][-]{section.Alph0.1}{Anhang-Section}{chapter*.15}% 70
+\BOOKMARK [2][-]{subsection.4.2.4}{PureMVC}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.5}{Laravel}{section.4.2}% 36
+\BOOKMARK [1][-]{section.4.3}{Gas-Sensoren}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.3.1}{MQ Gas Sensoren}{section.4.3}% 38
+\BOOKMARK [2][-]{subsection.4.3.2}{Adafruit CCS811}{section.4.3}% 39
+\BOOKMARK [0][-]{chapter.5}{Problemanalyse}{}% 40
+\BOOKMARK [1][-]{section.5.1}{USE-Case-Analyse}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.2}{Domain-Class-Modelling}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.3}{User-Interface-Design}{chapter.5}% 43
+\BOOKMARK [0][-]{chapter.6}{Systementwurf}{}% 44
+\BOOKMARK [1][-]{section.6.1}{Architektur}{chapter.6}% 45
+\BOOKMARK [2][-]{subsection.6.1.1}{Design der Komponenten}{section.6.1}% 46
+\BOOKMARK [2][-]{subsection.6.1.2}{Benutzerschnittstellen}{section.6.1}% 47
+\BOOKMARK [2][-]{subsection.6.1.3}{Datenhaltunskonzept}{section.6.1}% 48
+\BOOKMARK [2][-]{subsection.6.1.4}{Konzept f\374r Ausnahmebehandlung}{section.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.1.5}{Sicherheitskonzept}{section.6.1}% 50
+\BOOKMARK [2][-]{subsection.6.1.6}{Design der Testumgebung}{section.6.1}% 51
+\BOOKMARK [2][-]{subsection.6.1.7}{Desing der Ausf\374hrungsumgebung}{section.6.1}% 52
+\BOOKMARK [1][-]{section.6.2}{Detailentwurf}{chapter.6}% 53
+\BOOKMARK [0][-]{chapter.7}{Implementierung}{}% 54
+\BOOKMARK [1][-]{section.7.1}{Webapp}{chapter.7}% 55
+\BOOKMARK [0][-]{chapter.8}{Deployment}{}% 56
+\BOOKMARK [0][-]{chapter.9}{Tests}{}% 57
+\BOOKMARK [1][-]{section.9.1}{Systemtests}{chapter.9}% 58
+\BOOKMARK [1][-]{section.9.2}{Akzeptanztests}{chapter.9}% 59
+\BOOKMARK [0][-]{chapter.10}{Projektevaluation}{}% 60
+\BOOKMARK [0][-]{chapter.11}{Benutzerhandbuch}{}% 61
+\BOOKMARK [0][-]{chapter.12}{Betriebswirtschaftlicher Kontext}{}% 62
+\BOOKMARK [0][-]{chapter.13}{Zusammenfassung}{}% 63
+\BOOKMARK [0][-]{chapter*.12}{Literaturverzeichnis}{}% 64
