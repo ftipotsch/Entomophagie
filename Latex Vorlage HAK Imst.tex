@@ -148,11 +148,10 @@ bibliography=totoc,index=totoc,listof=totoc, %Literaturverzeichnis usw auch in d
 % Was steht wo...
    %\ohead{\headmark - \pagemark}
    %\ihead{\headmark}
-\nocite{*}
+
 \input{inp_titlepage_hak.tex}
 
 \def \currentAuthor {}
-
 
 \makeatletter
 \let\newtitle\@title
@@ -188,6 +187,7 @@ bibliography=totoc,index=totoc,listof=totoc, %Literaturverzeichnis usw auch in d
 \lstlistoflistings
 
 \input{inp_content.tex}
+\input{inp_examples.tex}
 
 \bibliographystyle{dinat}
 %\bibliographystyle{plainurl}

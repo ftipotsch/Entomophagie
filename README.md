@@ -22,5 +22,12 @@ Wenn die Kapitel bearbeitet werden sollen, dann einfach die Kapitel-Dateien in T
 
 ## 4) Git-scm und Tortoise-Git für die Versionierung
 
-Für die Versionierung von Dokumenten empfiehlt es sich, die vorhandene Plattformen wie Gitlab oder Bitbucket zu nutzen. Am Client-Desktop helfen dabei die Werkzeuge wie der Git-Client und die Explorer-Integration wie Tortoise-Git die Versionierungen zu verwalten. Wer lieber in der Kommandozeile ala Linux auf Windows mit Git arbeitet, dem sei der Cmder Consolen-Emulator empfohlen. Dieser ist nach Eingewöhnung und durch Unterstützung verschiedener Kommandos und Shortcuts eine hilfreiche Unterstützung. 
+Für die Versionierung von Dokumenten empfiehlt es sich, 
+online Repositories wie Gitlab oder Bitbucket zu nutzen. 
+Diese unterstützen im Gegensatz zu Github auch gratis 
+private Repositories. Am Client-Desktop helfen dabei die 
+Werkzeuge wie der Git-Client und die Explorer-Integration 
+wie Tortoise-Git die Versionierungen zu verwalten. Wer 
+lieber in der Kommandozeile ala Linux auf Windows mit Git 
+arbeitet, dem sei der Cmder Consolen-Emulator empfohlen. Dieser ist nach Eingewöhnung und durch Unterstützung verschiedener Kommandos und Shortcuts eine hilfreiche Unterstützung. 
 
