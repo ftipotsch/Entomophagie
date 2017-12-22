@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\models;
+namespace common\models;
 
 use Yii;
 
@@ -11,7 +11,7 @@ use Yii;
  * @property integer $Seriennummern
  * @property integer $SeriennumerAktiviert
  *
- * @property User[] $users
+ * @property User $seriennummern
  */
 class Seriennummer extends \yii\db\ActiveRecord
 {
@@ -31,6 +31,7 @@ class Seriennummer extends \yii\db\ActiveRecord
         return [
             [['idSeriennummer', 'Seriennummern'], 'required'],
             [['idSeriennummer', 'Seriennummern', 'SeriennumerAktiviert'], 'integer'],
+            [['Seriennummern'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['Seriennummern' => 'Seriennummer_Seriennumern']],
         ];
     }
 
@@ -49,8 +50,8 @@ class Seriennummer extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUsers()
+    public function getSeriennummern()
     {
-        return $this->hasMany(User::className(), ['Seriennummer_idSeriennummer' => 'idSeriennummer']);
+        return $this->hasOne(User::className(), ['Seriennummer_Seriennumern' => 'Seriennummern']);
     }
 }

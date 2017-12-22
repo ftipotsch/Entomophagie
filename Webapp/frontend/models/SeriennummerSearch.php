@@ -1,14 +1,14 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Seriennummer;
+use common\models\Seriennummer;
 
 /**
- * SeriennummerSearch represents the model behind the search form about `app\models\Seriennummer`.
+ * SeriennummerSearch represents the model behind the search form about `common\models\Seriennummer`.
  */
 class SeriennummerSearch extends Seriennummer
 {

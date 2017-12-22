@@ -20,6 +20,7 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property integer $Seriennummer_Seriennumern
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -81,6 +82,10 @@ class User extends ActiveRecord implements IdentityInterface
     public static function findByUsername($username)
     {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+    }
+    public static function findSeriennummer($seriennummer)
+    {
+        return static::findOne(['Seriennummer_Seriennumern' => $seriennummer, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**
@@ -186,4 +191,5 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
 }

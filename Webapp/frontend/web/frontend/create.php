@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Seriennummer */
+/* @var $model frontend\models\Seriennummer */
 
 $this->title = 'Create Seriennummer';
 $this->params['breadcrumbs'][] = ['label' => 'Seriennummers', 'url' => ['index']];

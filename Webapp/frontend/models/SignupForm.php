@@ -3,6 +3,8 @@ namespace frontend\models;
 
 use yii\base\Model;
 use common\models\User;
+use yii;
+use yii\base;
 
 /**
  * Signup form
@@ -12,7 +14,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
-
+    public $Seriennummer_Seriennumern;
 
     /**
      * @inheritdoc
@@ -33,6 +35,12 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['Seriennummer_Seriennumern', 'required'],
+            ['Seriennummer_Seriennumern', 'unique','targetClass' => '\common\models\User', 'message' => 'This Seriennummer has already been taken.'],
+            ['Seriennummer_Seriennumern', 'integer', 'min' => 8 ],
+            ['Seriennummer_Seriennumern', 'exist', 'targetClass' => 'common\models\Seriennummer', 'targetAttribute' => 'Seriennummern'],
+
         ];
     }
 
@@ -41,18 +49,23 @@ class SignupForm extends Model
      *
      * @return User|null the saved model or null if saving fails
      */
+
     public function signup()
     {
+
         if (!$this->validate()) {
             return null;
         }
-        
+
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
+        $user->Seriennummer_Seriennumern = $this->Seriennummer_Seriennumern;
         return $user->save() ? $user : null;
-    }
+
+        }
+
+
 }

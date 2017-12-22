@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Seriennummer */
+/* @var $model frontend\models\Seriennummer */
 
 $this->title = 'Update Seriennummer: ' . $model->idSeriennummer;
 $this->params['breadcrumbs'][] = ['label' => 'Seriennummers', 'url' => ['index']];
