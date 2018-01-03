@@ -8,6 +8,7 @@ use frontend\models\SeriennummerSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * SeriennummerController implements the CRUD actions for Seriennummer model.
@@ -17,6 +18,8 @@ class SeriennummerController extends Controller
     /**
      * @inheritdoc
      */
+
+
     public function behaviors()
     {
         return [
@@ -26,31 +29,41 @@ class SeriennummerController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index'],
+                'rules' => [
+                    [
+                        'actions' => ['index'],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
         ];
+
     }
 
     /**
      * Lists all Seriennummer models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new SeriennummerSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
 
     /**
      * Displays a single Seriennummer model.
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionIndex()
     {
+        $id = Seriennummer::find()
+            ->where(['user_id' => Yii::$app->user->identity->getId()])
+            ->one();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

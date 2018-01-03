@@ -31,7 +31,7 @@ class Seriennummer extends \yii\db\ActiveRecord
         return [
             [['idSeriennummer', 'Seriennummern'], 'required'],
             [['idSeriennummer', 'Seriennummern', 'SeriennumerAktiviert'], 'integer'],
-        ];
+                    ];
     }
 
     /**
