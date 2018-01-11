@@ -3,6 +3,7 @@ namespace frontend\models;
 
 use yii\base\Model;
 use common\models\User;
+use common\models\Seriennummer;
 use yii;
 use yii\base;
 
@@ -63,7 +64,11 @@ class SignupForm extends Model
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->Seriennummer_Seriennumern = $this->Seriennummer_Seriennumern;
-        return $user->save() ? $user : null;
+
+        $seriennummer = Seriennummer::find()->where(['Seriennummern' => ''.$this->Seriennummer_Seriennumern])->one();
+        $seriennummer->SeriennumerAktiviert = 1;
+        $user->Seriennummer_id = $seriennummer->idSeriennummer;
+        return $user->save()&& $seriennummer->save() ? $user : null;
 
         }
 

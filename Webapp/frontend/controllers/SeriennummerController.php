@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\models\User;
 
 /**
  * SeriennummerController implements the CRUD actions for Seriennummer model.
@@ -61,9 +62,8 @@ class SeriennummerController extends Controller
      */
     public function actionIndex()
     {
-        $id = Seriennummer::find()
-            ->where(['user_id' => Yii::$app->user->identity->getId()])
-            ->one();
+        $User = User::find()->where(['id' => ''.Yii::$app->user->identity->getId()])->one();
+        $id = $User->Seriennummer_id;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
