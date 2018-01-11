@@ -2,29 +2,21 @@
 
 namespace frontend\controllers;
 
-use frontend\models\Data;
 use Yii;
-use common\models\Seriennummer;
-use frontend\models\SeriennummerSearch;
-use yii\data\SqlDataProvider;
+use frontend\models\Data;
+use frontend\models\DataSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use common\models\User;
-
-
 
 /**
- * SeriennummerController implements the CRUD actions for Seriennummer model.
+ * DataController implements the CRUD actions for Data model.
  */
-class SeriennummerController extends Controller
+class DataController extends Controller
 {
     /**
      * @inheritdoc
      */
-
-
     public function behaviors()
     {
         return [
@@ -34,63 +26,47 @@ class SeriennummerController extends Controller
                     'delete' => ['POST'],
                 ],
             ],
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index'],
-                'rules' => [
-                    [
-                        'actions' => ['index'],
-                        'allow' => false,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
         ];
-
     }
 
     /**
-     * Lists all Seriennummer models.
-     * @return mixed
-     */
-
-    /**
-     * Displays a single Seriennummer model.
-     * @param integer $id
+     * Lists all Data models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $User = User::find()->where(['id' => ''.Yii::$app->user->identity->getId()])->one();
+        $searchModel = new DataSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        $id = $User->Seriennummer_id;
-        $seriennummerData = Data::find()->where(['seriennummer_idSeriennummer' => ''.$id])->all();
-        $dataProvider = new SqlDataProvider([
-            'sql' => 'SELECT * From data WHERE seriennummer_idSeriennummer ='.$id
-                    ]);
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-            'data' => $dataProvider,
-
-    ]);
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
-     * Creates a new Seriennummer model.
+     * Displays a single Data model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    /**
+     * Creates a new Data model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Seriennummer();
+        $model = new Data();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idSeriennummer]);
+            return $this->redirect(['view', 'id' => $model->idData]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -99,7 +75,7 @@ class SeriennummerController extends Controller
     }
 
     /**
-     * Updates an existing Seriennummer model.
+     * Updates an existing Data model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -109,7 +85,7 @@ class SeriennummerController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idSeriennummer]);
+            return $this->redirect(['view', 'id' => $model->idData]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -118,7 +94,7 @@ class SeriennummerController extends Controller
     }
 
     /**
-     * Deletes an existing Seriennummer model.
+     * Deletes an existing Data model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -131,15 +107,15 @@ class SeriennummerController extends Controller
     }
 
     /**
-     * Finds the Seriennummer model based on its primary key value.
+     * Finds the Data model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Seriennummer the loaded model
+     * @return Data the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Seriennummer::findOne($id)) !== null) {
+        if (($model = Data::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

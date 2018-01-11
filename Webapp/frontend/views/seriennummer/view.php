@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Seriennummer */
@@ -21,5 +22,20 @@ $this->params['breadcrumbs'][] = "Ihre Seriennummer";
             'SeriennumerAktiviert',
         ],
     ]) ?>
+
+
+    <?= GridView::widget([
+        'dataProvider' => $data,
+        'columns' => [
+            'idData',
+            'DataTemperatur',
+            'DataGewicht',
+            'DataLicht',
+            'DataCo2',
+            'DataLuftfeuchtigkeit',
+        ],
+    ]) ?>
+
+
 
 </div>
