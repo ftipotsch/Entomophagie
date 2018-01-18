@@ -6,6 +6,7 @@ use common\models\User;
 use common\models\Seriennummer;
 use yii;
 use yii\base;
+use yii\rbac;
 
 /**
  * Signup form
@@ -68,7 +69,15 @@ class SignupForm extends Model
         $seriennummer = Seriennummer::find()->where(['Seriennummern' => ''.$this->Seriennummer_Seriennumern])->one();
         $seriennummer->SeriennumerAktiviert = 1;
         $user->Seriennummer_id = $seriennummer->idSeriennummer;
+
+
+        $auth = \Yii::$app->authManager;
+        $authorRole = $auth->getRole('author');
+        $auth->assign($authorRole, $user->getId());
+
+
         return $user->save()&& $seriennummer->save() ? $user : null;
+
 
         }
 
