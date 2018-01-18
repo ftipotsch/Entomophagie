@@ -16,6 +16,21 @@ PureMVC.
 \newblock Implementation idioms and best practices.
 \newblock URL: \url{http://puremvc.org/}.
 
+\bibitem{kohaesion}
+Wikipedia.
+\newblock Kohäsion.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Koh%C3%A4sion_(Informatik)}.
+
+\bibitem{kopplung}
+Wikipedia.
+\newblock Lose kopplung.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Lose_Kopplung}.
+
+\bibitem{MVC}
+Wikipedia.
+\newblock Model view controller.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Model_View_Controller}.
+
 \bibitem{Web_2}
 Wikipedia.
 \newblock Web 2.0.

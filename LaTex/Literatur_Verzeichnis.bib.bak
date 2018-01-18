@@ -1,21 +1,45 @@
 % Encoding: UTF-8
 
 @Misc{Web_2,
-  author = {Wikipedia},
-  title  = {Web 2.0},
-  url    = {https://en.wikipedia.org/wiki/Web_2.0},
+  author    = {Wikipedia},
+  title     = {Web 2.0},
+  timestamp = {2017-12-12},
+  url       = {https://en.wikipedia.org/wiki/Web_2.0},
 }
 
 @Misc{MQ_Sensoren,
-  author = {Arduino},
-  title  = {MQGasSensor},
-  url    = {https://playground.arduino.cc/Main/MQGasSensors},
+  author    = {Arduino},
+  title     = {MQGasSensor},
+  timestamp = {2017-12-12},
+  url       = {https://playground.arduino.cc/Main/MQGasSensors},
 }
 
 @Misc{MQ_Datasheet,
-  author = {HANWEI ELETRONICS CO.,LTD},
-  title  = {TECHNICAL DATA MQ-2 GAS SENSOR},
-  url    = {https://www.mouser.com/ds/2/321/605-00008-MQ-2-Datasheet-370464.pdf},
+  author    = {HANWEI ELETRONICS CO.,LTD},
+  title     = {TECHNICAL DATA MQ-2 GAS SENSOR},
+  timestamp = {2017-12-12},
+  url       = {https://www.mouser.com/ds/2/321/605-00008-MQ-2-Datasheet-370464.pdf},
+}
+
+@Misc{Pure_MVC,
+  author    = {PureMVC},
+  title     = {Implementation Idioms and Best Practices},
+  timestamp = {2017-12-12},
+  url       = {http://puremvc.org/},
+}
+
+@Misc{kopplung,
+  author    = {Wikipedia},
+  title     = {Lose Kopplung},
+  timestamp = {2018-01-18},
+  url       = {https://de.wikipedia.org/wiki/Lose_Kopplung},
+}
+
+@Misc{kohaesion,
+  author    = {Wikipedia},
+  title     = {Kohäsion},
+  timestamp = {2018-01-18},
+  url       = {https://de.wikipedia.org/wiki/Koh%C3%A4sion_(Informatik)},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
