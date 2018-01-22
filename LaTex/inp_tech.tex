@@ -9,7 +9,7 @@
 	\item MVC - Für Webapp
 \end{itemize}
 	\subsection{MVC - Model, View, Controller}
-	\subsection{Was ist MVC?}
+	\subsection{Was ist MVC?} \label{sec:mvc}
 	MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für Anwendungen die ein User Interface beinhalten. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
 	\subsection{Vor- und Nachteile}
 	\begin{tabular}{ l r }
@@ -20,15 +20,22 @@
 	\end{tabular}
 	\subsection{Yii2}
 	\subsubsection{Was ist Yii}
-	Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert die User aktiv im Web mitzumachen. Diese können eigenen Beiträge erstellen und diese auf der Website anzeigen lassen.
-\cite{Web_2}
-	\subsection{Alternativen für Frameworks}
-	Yii kann sehr weitreichend eingesetzt werden. Mit dem richtigen Wissen und Fähigkeiten kann man alles was mit einer PHP Seite möglich ist ganz einfach in Yii2 umsetzten. Dabei gibt es auch viele Vorteile:
-\begin{itemize}
-\item CRUD-Creator
-\item Model Generator
-\item Einfache Implementierung von HTML Formulare
-\end{itemize}
+	Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert die User aktiv im Web mitzumachen. Diese können eigenen Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+	
+	\subsubsection{Vor- und Nachteile}
+	Yii hat sehr viele Vorteile, allerdings auch einig Nachteile:
+	Vorteile sind:
+	\begin{itemize}
+		\item CRUD-Creator (Gii)
+		\item Model Generator (Gii)
+		\item Einfache Implementierung von HTML Formulare
+		\item Einfach Datenbankzugriffe
+	\end{itemize}
+	\subsubsection{Gii} \label{sec:gii}
+	Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiter verlauf dann nach eigenen Wünschen verändern.
+	\subsection{Alternative zu Frameworks}
+	Yii kann sehr weitreichend eingesetzt werden. Mit dem richtigen Wissen und Fähigkeiten kann man alles was mit einer PHP Seite möglich ist ganz einfach in Yii2 umsetzten.
+
 Allerdings sind Frameworks nicht Administratoren freundlich da sie sehr viel Vorwissen erfordern um diese richtig zu implementieren. Einfacher zu implementieren sind CMS Systeme. Es gibt sehr viele Große CMS Systeme zum Beispiel:
 \begin{itemize}
 \item Joomla
@@ -36,11 +43,11 @@ Allerdings sind Frameworks nicht Administratoren freundlich da sie sehr viel Vor
 \item Drupal
 \item Contao
 \end{itemize}
-Diese haben wir auch schon im Unterricht besprochen und damit Websites erstellt. Vorteile sind vor allem die einfache Implementierung und rasche Einrichtung einer Website. Auch SEO wird von den CMS Systemen vereinfacht. Nachteile sind allerdings oft eingeschränkte Möglichkeiten und grenzen die das CMS setzt.
+Diese haben wir auch schon im Unterricht besprochen und damit Websites erstellt. Vorteile sind vor allem die einfache Implementierung und rasche Einrichtung einer Website. Auch SEO wird von den CMS Systemen vereinfacht. Nachteile sind allerdings oft eingeschränkte Möglichkeiten und grenzen welches das CMS setzt.
 
 \subsection{Warum haben wir uns für YII2 entschieden}
 
-Der Hauptgrund warum wir uns gegen CMS Systeme entschieden haben sind die eingeschränkten Möglichkeiten die wir damit hätten. Bei YII2 können wir die gesamte Website nach unseren Bedarf zusammenstellen und auch so bearbeiten wie wir es wollen. Es war uns auch wichtig das wir nach modernen Entwurfsmustern arbeiten (hier MVC).
+Der Hauptgrund warum wir uns gegen CMS Systeme entschieden haben sind die eingeschränkten Möglichkeiten die wir damit hätten. Bei YII2 können wir die gesamte Website nach unseren Bedarf zusammenstellen und auch so bearbeiten wie wir es wollen. Es war uns auch wichtig das wir nach modernen Entwurfsmustern arbeiten. Siehe \nameref{sec:mvc}.
 
 Wir hätten uns auch für andere Frameworks entscheiden können allerdings war uns Yii2 schon bekannt und wir haben damit schon einige Websites erstellt.
 
