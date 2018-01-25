@@ -134,6 +134,52 @@ Vorstellung des fertigen Produktes anhand von Screenshots, Bildern, Erklärungen
 
 \subsection{Design der Komponenten}
 
+Unsere Webapp ist in Yii2 programmiert und ist deshalb nach dem MVC Muster aufgebaut.
+\subsection{MVC - Model, View, Controller}\label{sec:MVC}
+
+\subsubsection{Was ist MVC?} 
+MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für Anwendungen die ein User Interface beinhalten. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
+
+\subsubsection{Vor- und Nachteile}
+\begin{tabular}{ l r }
+	Vorteile & Nachteile \\
+	Gleichzeitiges Programmieren & Schlechte Übersicht \\
+	Hohe Kohäsion \cite{kohaesion} & Konsistente Programmierung notwendig\\
+	Lose Kopplung \cite{kopplung} & Steile Lernkurve \\	
+\end{tabular}
+
+
+
+\subsection{CRUD - Create, Read, Update, Delete} \label{sec:CRUD}
+
+\subsubsection{Was ist CRUD?}
+CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
+	\item Create - Erstellen neuer Datensätze
+	\item Read - Auslesen der Datensätze
+	\item Update - Aktualisieren von vorhandenen Datensätze
+	\item Delete - Löschen von Datensätzen
+\end{itemize}
+
+Crud wird auch in Yii2 eingesetzte und kann über das \nameref{sec:gii} Modul erstellt werden. \cite{CRUD}
+
+\subsection{Yii2} \label{sec:YII2}
+
+\subsubsection{Was ist Yii}
+Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert die User aktiv im Web mitzumachen. Diese können eigenen Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+
+\subsubsection{Gii} \label{sec:gii}
+Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiter verlauf dann nach eigenen Wünschen verändern.
+
+\subsubsection{Vor- und Nachteile}
+Yii hat sehr viele Vorteile, allerdings auch einig Nachteile:
+Vorteile sind:
+
+\begin{itemize}
+	\item CRUD-Creator (\nameref{sec:gii})
+	\item Model Generator (\nameref{sec:gii})
+	\item Einfache Implementierung von HTML Formulare
+	\item Einfach Datenbankzugriffe
+\end{itemize}
 Darstellung und Beschreibung der Systemarchitektur;
 
 \begin{itemize}
