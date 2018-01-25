@@ -1,4 +1,16 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{W3schools}
+W3schools.
+\newblock URL: \url{https://www.w3schools.com/}.
+
+\bibitem{WHATWG}
+Web hypertext application technology working group.
+\newblock URL: \url{https://whatwg.org/}.
+
+\bibitem{W3C}
+World wide web consortium.
+\newblock URL: \url{https://www.w3.org/}.
 
 \bibitem{MQ_Sensoren}
 Arduino.
@@ -16,6 +28,11 @@ PureMVC.
 \newblock Implementation idioms and best practices.
 \newblock URL: \url{http://puremvc.org/}.
 
+\bibitem{CRUD}
+Wikipedia.
+\newblock Crud.
+\newblock URL: \url{https://de.wikipedia.org/wiki/CRUD}.
+
 \bibitem{kohaesion}
 Wikipedia.
 \newblock Kohäsion.
@@ -28,7 +45,7 @@ Wikipedia.
 
 \bibitem{MVC}
 Wikipedia.
-\newblock Model view controller.
+\newblock Model view controllers.
 \newblock URL: \url{https://de.wikipedia.org/wiki/Model_View_Controller}.
 
 \bibitem{Web_2}
