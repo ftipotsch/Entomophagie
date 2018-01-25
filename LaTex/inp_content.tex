@@ -148,19 +148,35 @@ MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für
 	Lose Kopplung \cite{kopplung} & Steile Lernkurve \\	
 \end{tabular}
 
+Das MVC Entwurfsmuster ist sehr weit verbreitet und hoch angesehen, es wird deshalb in den meisten Anwendungen mit User Interface angewandt. Der Grund für die Verwendung dieses Musters sind die Vielen Vorteile die es bietet. Außerdem können viel Nachteile über Frameworks behoben werden.
 
+\subsubsection{Aufbau von MVC}
+Im Grunde arbeitet MVC mit 3 Klassen:
+\begin{itemize}
+	\item Modell
+	\item View
+	\item Controller
+\end{itemize}
+Die Unterschiedlichen Klassen haben unterschiedliche Aufgaben.
+
+\subsubsection{View}
+Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es Benutzer Eingaben entgegen.
+\subsubsection{Controller}
+Die Controller Klasse Steuert die ganze Anwendung, sie nimmt die User eingaben von der View Klasse entgegen und verarbeitet diese. Außerdem ändert sie auch die View Klasse um andere Seiten anzuzeigen. Sie nimmt auch die Daten von der Modell Klasse entgegen, verarbeitet diese und gibt sie an die View Klasse weiter.
+\subsubsection{Modell}
+Die Modell Klasse enthält die darzustellenden Daten, sie ist unabhängig von der View und der Controller Klasse
 
 \subsection{CRUD - Create, Read, Update, Delete} \label{sec:CRUD}
 
 \subsubsection{Was ist CRUD?}
 CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
+\begin{itemize}
 	\item Create - Erstellen neuer Datensätze
 	\item Read - Auslesen der Datensätze
 	\item Update - Aktualisieren von vorhandenen Datensätze
 	\item Delete - Löschen von Datensätzen
 \end{itemize}
-
-Crud wird auch in Yii2 eingesetzte und kann über das \nameref{sec:gii} Modul erstellt werden. \cite{CRUD}
+\cite{CRUD}
 
 \subsection{Yii2} \label{sec:YII2}
 
