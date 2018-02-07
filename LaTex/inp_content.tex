@@ -131,7 +131,7 @@ Vorstellung des fertigen Produktes anhand von Screenshots, Bildern, Erklärungen
 \chapter{Systementwurf}
 
 \section{Architektur}
-
+\def \currentAuthor{Florian Tipotsch}
 \subsection{Design der Komponenten}
 
 Unsere Webapp ist in Yii2 programmiert und ist deshalb nach dem MVC Muster aufgebaut.
@@ -178,6 +178,13 @@ CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
 \end{itemize}
 \cite{CRUD}
 
+\subsubsection{Vor- und Nachteile}
+\begin{tabular}{ l r }
+	Vorteile & Nachteile \\
+	
+\end{tabular}
+
+
 \subsection{Yii2} \label{sec:YII2}
 
 \subsubsection{Was ist Yii}
@@ -196,34 +203,18 @@ Vorteile sind:
 	\item Einfache Implementierung von HTML Formulare
 	\item Einfach Datenbankzugriffe
 \end{itemize}
-Darstellung und Beschreibung der Systemarchitektur;
 
-\begin{itemize}
-	\item  statische Zerlegung des Systems in seine physischen Bestandteile (Komponenten, Komponentendiagramm)
-	\item (textuelle) Beschreibung des dynamischen Zusammenwirkens aller Komponenten 
-	\item (textuelle) Beschreibung der Strategie für die Architektur, d. h. wie die Architektur in Statik und Dynamik funktionieren soll.
-	\item Verwendung von Referenzarchitekturen bzw. Architekturmustern (als Schablonen, z.B. MVC. Plugin, Pipes and Filters)
-	\begin{itemize}
-		\item MVC
-		\item Schichten
-		\item Pipes
-		\item Request Broker
-		\item Service-Oriented
-	\end{itemize}
-\end{itemize}
+Nachteile ist der Hohe Setup aufwand und die benötigten Kenntnisse in PHP und SQL.
+
 
 \subsection{Benutzerschnittstellen} 
-\begin{itemize}
-	\item Design des UIs
-	\item Dialoge, Dialogsteuerung, Ergonomie, Gestaltung, Eingabeüberprüfungen
-\end{itemize}
 
+Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen das man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer auf dem Kasten Registrieren, und dadurch auf die Daten zugreifen welche für die jeweilige Seriennummer gespeichert sind zugreifen.
+\newline
+Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden.
 \subsection{Datenhaltunskonzept}
-\begin{itemize}
-	\item Design der Datenbank (ER-Modell)
-	\item Design des Zugriffs auf diese Daten (Datenhaltungskonzept)
-	\item Caching, Transaktionen
-\end{itemize}
+
+	\includegraphics[height=500pt]{figures/ERDiagramm}
 
 \subsection{Konzept für Ausnahmebehandlung}
 \begin{itemize}

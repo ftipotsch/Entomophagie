@@ -71,9 +71,6 @@ class SignupForm extends Model
         $user->Seriennummer_id = $seriennummer->idSeriennummer;
 
 
-        $auth = \Yii::$app->authManager;
-        $authorRole = $auth->getRole('author');
-        $auth->assign($authorRole, $user->getId());
 
 
         return $user->save()&& $seriennummer->save() ? $user : null;

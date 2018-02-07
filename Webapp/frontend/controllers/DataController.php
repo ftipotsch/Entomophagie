@@ -36,7 +36,9 @@ class DataController extends Controller
     public function actionIndex()
     {
         $searchModel = new DataSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = Data::find()
+            ->orderBy(['idData' => SORT_ASC])
+            ->all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
