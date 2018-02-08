@@ -37,8 +37,8 @@ class DataController extends Controller
     {
         $searchModel = new DataSearch();
         $dataProvider = Data::find()
-            ->orderBy(['idData' => SORT_ASC])
-            ->all();
+        ->orderBy(['idData' => SORT_ASC])
+        ->all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,

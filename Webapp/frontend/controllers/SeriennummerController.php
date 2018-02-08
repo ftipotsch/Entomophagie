@@ -69,9 +69,8 @@ class SeriennummerController extends Controller
         $User = User::find()->where(['id' => ''.Yii::$app->user->identity->getId()])->one();
 
         $id = $User->Seriennummer_id;
-        $seriennummerData = Data::find()->where(['seriennummer_idSeriennummer' => ''.$id])->all();
         $dataProvider = new SqlDataProvider([
-            'sql' => 'SELECT * From data WHERE seriennummer_idSeriennummer ='.$id
+            'sql' => 'SELECT * From data WHERE seriennummer_idSeriennummer ='.$id . ' ORDER BY idData DESC' //hier werden die Daten ausgelesen und vom letzten zum ersten hin geordnet.
                     ]);
         return $this->render('view', [
             'model' => $this->findModel($id),

@@ -30,3 +30,23 @@ Hier Sieht man die Ansicht wenn man auf unserer Website nicht Angemeldet ist. Ma
 Unserer Datenbank zugriffe werden von unserem Framework verarbeite, dabei verwendet das Framework CRUD befehle und nach dem MVC Muster. Das heißt es gibt ein unterliegendes Modell welches Daten unserem Controller mitgibt welche wiederum die View erzeugt.
 
 Der gesamte Datenbankzugriff kann mittels Yii2 sehr einfach erstellt werden. Mehr dazu siehe \nameref{sec:gii}
+
+\subsection{Datenübermittlung} \label{sec:daten}
+
+Um die Daten von unsrem Arduino an unsere Datenbank zu senden werden wir in den Brutkasten ein WLAN Modul einbauen und die Daten alle 5-10 Minuten als JSON-Format an unsere REST-Schnittstelle unserer Webapp senden. Das hat den Vorteil das unsere Daten direkt von unserem Brutkasten an die Datenbank gegeben werden kann.
+\newline
+Für diese Lösung brauchen wir eine REST Schnittelle in unserer Webapp. Dies kann über YII2 sehr einfach realisiert werden. Yii2 hat eine vor implementierte REST Schnittelle welche man nur noch aktivieren muss. Die Daten werden aus der Modell Klasse ausgelesen und über den Controller an die REST-View weitergeleitet. Die ganze Implementierung sind 5-10 Zeilen Code.
+\newpage
+\includegraphics{figures/Ordner}
+\newline
+Hier sieht man die Ordnerstruktur.
+\newline
+\includegraphics{figures/Controller}
+\newline
+Hier sieht man die Controller Klasse.
+\newline
+\includegraphics{figures/Modul}
+\newline
+Hier sieht man die Module Klasse.
+\newline
+Wir haben das ganze mit folgendem Online Tutorial erstellt \cite{RESTTutorial}.

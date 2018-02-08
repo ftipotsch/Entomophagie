@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'DataGewicht',
             'DataLicht',
             'DataCo2',
-            // 'DataLuftfeuchtigkeit',
-            // 'seriennummer_idSeriennummer',
+            'DataLuftfeuchtigkeit',
+            'seriennummer_idSeriennummer',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
