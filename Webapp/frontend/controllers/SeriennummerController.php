@@ -100,4 +100,18 @@ class SeriennummerController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionCharts()
+    {
+        $User = User::find()->where(['id' => ''.Yii::$app->user->identity->getId()])->one();
+
+        $id = $User->Seriennummer_id;
+        $dataProvider = new SqlDataProvider([
+            'sql' => 'SELECT * From data WHERE seriennummer_idSeriennummer ='.$id . ' ORDER BY idData DESC' //hier werden die Daten ausgelesen und vom letzten zum ersten hin geordnet.
+        ]);
+        return $this->render('charts', [
+            'data' => $dataProvider,
+
+        ]);
+    }
 }
