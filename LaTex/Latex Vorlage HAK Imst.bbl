@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{W3schools}
+W3schools.
+\newblock URL: \url{https://www.w3schools.com/}.
+
+\bibitem{WHATWG}
+Web hypertext application technology working group.
+\newblock URL: \url{https://whatwg.org/}.
+
+\bibitem{W3C}
+World wide web consortium.
+\newblock URL: \url{https://www.w3.org/}.
+
+\bibitem{MQ_Sensoren}
+Arduino.
+\newblock Mqgassensor.
+\newblock URL: \url{https://playground.arduino.cc/Main/MQGasSensors}.
+
+\bibitem{MQ_Datasheet}
+LTD HANWEI ELETRONICS~CO.
+\newblock Technical data mq-2 gas sensor.
+\newblock URL:
+  \url{https://www.mouser.com/ds/2/321/605-00008-MQ-2-Datasheet-370464.pdf}.
+
+\bibitem{Restt}
+Budi Irwan.
+\newblock Setup restful api in yii2, July 2014.
+\newblock URL: \url{http://budiirawan.com/setup-restful-api-yii2/}.
+
+\bibitem{Pure_MVC}
+PureMVC.
+\newblock Implementation idioms and best practices.
+\newblock URL: \url{http://puremvc.org/}.
+
+\bibitem{CRUD}
+Wikipedia.
+\newblock Crud.
+\newblock URL: \url{https://de.wikipedia.org/wiki/CRUD}.
+
+\bibitem{kohaesion}
+Wikipedia.
+\newblock Kohäsion.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Koh%C3%A4sion_(Informatik)}.
+
+\bibitem{kopplung}
+Wikipedia.
+\newblock Lose kopplung.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Lose_Kopplung}.
+
+\bibitem{MVC}
+Wikipedia.
+\newblock Model view controllers.
+\newblock URL: \url{https://de.wikipedia.org/wiki/Model_View_Controller}.
+
+\bibitem{Web_2}
+Wikipedia.
+\newblock Web 2.0.
+\newblock URL: \url{https://en.wikipedia.org/wiki/Web_2.0}.
+
+\end{thebibliography}
