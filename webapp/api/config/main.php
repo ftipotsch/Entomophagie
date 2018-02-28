@@ -17,7 +17,7 @@ return [
             'class' => 'api\modules\v1\Module'
         ]
     ],
-    'components' => [        
+    'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => false,
@@ -38,16 +38,23 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => 'v1/data',
+                    'controller' => ['v1/data', 'v1/seriennummer'],
                     'tokens' => [
-                        '{id}' => '<id:\\w+>'
+                        '{id}' => '<id:\\w+>',
                     ]
                     
                 ]
-            ],        
-        ]
+            ],
+
+        ],
+        'request' => [
+    'parsers' => [
+        'application/json' => 'yii\web\JsonParser',
+    ]
+]
     ],
     'params' => $params,
+
 ];
 
 
