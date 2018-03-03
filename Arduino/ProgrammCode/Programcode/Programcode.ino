@@ -1,11 +1,12 @@
 //temperature
 #include <dht.h>
 dht DHT;
-#define DHT11_PIN    2
+#define DHT11_PIN 2
 
 
 //CO2 Sensor
 #include "Adafruit_CCS811.h"
+
 
 Adafruit_CCS811 ccs;
 
@@ -17,13 +18,13 @@ int LEDbrightness; //
 
 
 void setup(void) {
- Serial.begin(9600);    // We'll send debugging information via the Serial monitor so if you can read it   without using a led
+ Serial.begin(115200);    // We'll send debugging information via the Serial monitor so if you can read it   without using a led
   
  Serial.println("CCS811 test");
   
   if(!ccs.begin()){
     Serial.println("Failed to start sensor! Please check your wiring.");
-    while(1);  
+    //while(1);  
     }
     
 }
@@ -38,11 +39,11 @@ void loop(void) {
      }
     else{
       Serial.println("ERROR!");
-      while(1);
+      //while(1);
     }
   }
-
   int chk = DHT.read11(DHT11_PIN);
+  Serial.println(chk);
   Serial.print("Temperature = ");
   Serial.println(DHT.temperature);
   Serial.print("Humidity = ");
@@ -52,5 +53,6 @@ void loop(void) {
    Serial.print("Light = ");
    Serial.println(photocellReading);
  
-   delay(3000);        
-    }
+   delay(30000);        
+}
+
