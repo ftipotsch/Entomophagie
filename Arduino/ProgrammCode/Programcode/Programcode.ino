@@ -10,14 +10,12 @@ dht DHT;
 Adafruit_CCS811 ccs;
 
 //light sensor
-int photocellPin = 1; // the cell and 10K pulldown are connected to a0
-int photocellReading; // the analog reading from the sensor divider
-int LEDpin = 11; // connect Red LED to pin 11 (PWM pin) (this is not needed to use the sensor but if you have one laying around it could add a cool affect! This can be bought at your local Radio Shack.)
-int LEDbrightness; //
+int photocellPin = 1; 
+int photocellReading;
 
 
 void setup(void) {
- Serial.begin(9600);    // We'll send debugging information via the Serial monitor so if you can read it   without using a led
+ Serial.begin(9600);    
   
  Serial.println("CCS811 test");
   
