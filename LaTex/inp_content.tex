@@ -160,7 +160,7 @@ Im Grunde arbeitet MVC mit 3 Klassen:
 Die Unterschiedlichen Klassen haben unterschiedliche Aufgaben.
 
 \subsubsection{View}
-Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es Benutzer Eingaben entgegen.
+Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces verantwortlich. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es alle Benutzer/innen Eingaben entgegen.
 \subsubsection{Controller}
 Die Controller Klasse Steuert die ganze Anwendung, sie nimmt die User eingaben von der View Klasse entgegen und verarbeitet diese. Außerdem ändert sie auch die View Klasse um andere Seiten anzuzeigen. Sie nimmt auch die Daten von der Modell Klasse entgegen, verarbeitet diese und gibt sie an die View Klasse weiter.
 \subsubsection{Modell}
@@ -177,21 +177,16 @@ CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
 	\item Delete - Löschen von Datensätzen
 \end{itemize}
 \cite{CRUD}
-
-\subsubsection{Vor- und Nachteile}
-\begin{tabular}{ l r }
-	Vorteile & Nachteile \\
-	
-\end{tabular}
+Sie sind verantwortlich für alle Datenbankzugriffe die gemacht werden.
 
 
 \subsection{Yii2} \label{sec:YII2}
 
 \subsubsection{Was ist Yii}
-Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert die User aktiv im Web mitzumachen. Diese können eigenen Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
 
 \subsubsection{Gii} \label{sec:gii}
-Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiter verlauf dann nach eigenen Wünschen verändern.
+Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiterm Verlauf dann nach eigenen Wünschen verändern.
 
 \subsubsection{Vor- und Nachteile}
 Yii hat sehr viele Vorteile, allerdings auch einig Nachteile:
@@ -204,46 +199,39 @@ Vorteile sind:
 	\item Einfach Datenbankzugriffe
 \end{itemize}
 
-Nachteile ist der Hohe Setup aufwand und die benötigten Kenntnisse in PHP und SQL.
+Nachteile ist der Hohe Setup aufwand und die benötigte Kenntnisse in PHP und SQL.
 
 
 \subsection{Benutzerschnittstellen} 
 
 Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen das man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer auf dem Kasten Registrieren, und dadurch auf die Daten zugreifen welche für die jeweilige Seriennummer gespeichert sind zugreifen.
 \newline
-Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden.
+Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden da es den Rahmen dieses Projektes Sprengen würde.
 \subsection{Datenhaltunskonzept}
 Hier ist unser ER-Diagramm
 
 	\includegraphics[height=1000pt]{figures/ERDiagramm}
 	\newline
 	Die Datenbank werden wir bei unserem Web Hoster anlegen und dort alle Daten bis zu 7 Tage Speichern. Daten sollen alle 5-10 Minuten von unserem Brutkasten übermittelt werden. Zur Übermittlung werden wir ein WLAN Modul an unserem Brutkasten anbringen. Mehr dazu im Kapitel \nameref{sec:daten}. Für Prototyp Zwecken werden wir die Daten vorerst auf einen Raspberry Pi 3 speichern.
+	\newpage
+	\def \currentAuthor{}
 \subsection{Konzept für Ausnahmebehandlung}
 \begin{itemize}
 	\item Systemweite Festlegung, wie mit Exceptions umgegangen wird
 	\item Exceptions sind primär aus den Bereichen UI, Persistenz, Workflow-Management
 \end{itemize}
-
+	\newpage
+	\def \currentAuthor{Florian Tipotsch}
 \subsection{Sicherheitskonzept}
 Beschreibung aller sicherheitsrelevanten Designentscheidungen
 
-\begin{itemize}
-	\item Design der Security-Elemente
-	\item Design von Safety-Elementen (Fehlertoleranz, Verfügbarkeit etc.)
-\end{itemize}
+Auf unsere Website kann man sich mithilfe von Username und Password anmelden. Im Weiteren verlauf des Projektes besteht noch die Möglichkeit für unsere Rest Schnittelle eine Authentifizierung einzubauen. Da unser Prototyp allerdings nur lokal vorhanden ist ist dies zum jetzigen Zeitpunk noch nicht notwendig.
 
 \subsection{Design der Testumgebung}
-\begin{itemize}
-	\item wie wird getestet (Unit-Testing, Integrationstesting, Systemtests, Akzeptanztests)
-	\item Testumgebung, Testprozess, Teststrategie, Testmethoden, Testfälle
-\end{itemize}
-
+Unseren Protoyp testen wird indem wir ihn einen Tag autonom laufen lassen und am Ende dieser 24h Periode alle Daten kontrollieren ob diese Sinn machen und der Realität entsprechen. Um dies zu gewährleisten bräuchten wir allerdings einen Klima Regulierten Raum der Co2 messen kann.
 
 \subsection{Desing der Ausführungsumgebung}
-\begin{itemize}
-	\item Deployment (DevOps)
-	\item Betrieb (besonders Hoch- und Hertunerfahren der Anwendung)
-\end{itemize}
+Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem anstecken an eine Stromversorgung und dem Verbinden mit dem Internet, sowie das einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/ die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren der Temperatur sowie Co2 Werten damit die Insekten Überleben können.
 
 \section{Detailentwurf}
 
