@@ -8,7 +8,6 @@
 //temperature
 //DHT Sensor
 #include "DHT.h"
-
 #define DHTPIN 2     // what digital pin we're connected to
 #define DHTTYPE DHT11   // DHT 11
 DHT dht(DHTPIN, DHTTYPE);
@@ -18,6 +17,19 @@ DHT dht(DHTPIN, DHTTYPE);
 Adafruit_CCS811 ccs;
 
 
+//Hebel
+int xPin = A1;
+int yPin = A0;
+
+int xPosition = 0;
+int yPosition = 0;
+
+
+//servo 
+#include <Servo.h>
+int servoPin = 9;
+Servo servo;  
+int servoAngle = 0; 
 
 
 
@@ -56,6 +68,13 @@ void setup() {
     }
   delay(10);
 
+  //Hebel
+  pinMode(xPin, INPUT);
+  pinMode(yPin, INPUT);
+  
+  //Servo
+  servo.attach(servoPin);
+
   // We start by connecting to a WiFi network
 
   Serial.println();
@@ -78,93 +97,112 @@ void setup() {
 
 void loop() {
 
-// Adafruit
-delay(2000);
-  if(ccs.available()){
-   // float temp = ccs.calculateTemperature();
-    if(!ccs.readData()){
-      Serial.print("CO2: ");
-      Serial.println(ccs.geteCO2());
-     }
-    else{
-      Serial.println("ERROR!");
-      //while(1);
+  // Adafruit
+  delay(2000);
+    if(ccs.available()){
+        if(!ccs.readData()){
+          Serial.print("CO2: ");
+          Serial.println(ccs.geteCO2());
+         }
+        else{
+          Serial.println("ERROR!");
+          //while(1);
+        }
     }
-  }
-//DHT
-    float h = dht.readHumidity();
-  // Read temperature as Celsius (the default)
-  float t = dht.readTemperature();
-
-
-  // Check if any reads failed and exit early (to try again).
-  if (isnan(h) || isnan(t)) {
-    Serial.println("Failed to read from DHT sensor!");
-    //return;
-  }
-  Serial.print("Humidity: ");
-  Serial.print(h);
-  Serial.print(" %\t");
-  Serial.print("Temperature: ");
-  Serial.print(t);
-  Serial.print(" *C ");
-
+  
     
+  //DHT
+      float h = dht.readHumidity();
+    // Read temperature as Celsius (the default)
+    float t = dht.readTemperature();
   
-// Light Reading 
-   photocellReading = analogRead(A0);
-   Serial.print("Light = ");
-   Serial.println(photocellReading);
- 
-   delay(3000); 
-//WIFI
-  Serial.print("connecting to ");
-  Serial.println(host);
   
-  // Use WiFiClient class to create TCP connections
-  WiFiClient client;
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("connection failed");
-    return;
-  }
+    // Check if any reads failed and exit early (to try again).
+    if (isnan(h) || isnan(t)) {
+      Serial.println("Failed to read from DHT sensor!");
+      //return;
+    }
+    Serial.print("Humidity: ");
+    Serial.print(h);
+    Serial.print(" %\t");
+    Serial.print("Temperature: ");
+    Serial.print(t);
+    Serial.print(" *C ");
   
-  // We now create a URI for the request
-  String url = "";
-  url += streamId;
+      
+  // Light Reading 
+     photocellReading = analogRead(A0);
+     Serial.print("Light = ");
+     Serial.println(photocellReading);
+   
+     delay(3000); 
   
-  Serial.print("Requesting URL: ");
-  Serial.println(url);
   
-  // This will send the request to the server
+  //Servo
+      if(ccs.geteCO2() == 0){
+        
+      
+       //move the micro servo from 0 degrees to 180 degrees
+      for(;servoAngle < 180; servoAngle++) {       
+           servo.write(servoAngle);              
+            delay(10);
   
-  client.print(String("POST ") + url + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" + 
-               "Connection: close\r\n\r\n");
+         }
+       
+      } if (ccs.geteCO2() > 0 && servoAngle != 0){
   
-  unsigned long timeout = millis();
-  while (client.available() == 0) {
-    if (millis() - timeout > 5000) {
-      Serial.println(">>> Client Timeout !");
-      client.stop();
+          servo.write(45); 
+          servoAngle = 0;
+          Serial.println("RETURN");
+      }
+  
+      
+  //WIFI
+    Serial.print("connecting to ");
+    Serial.println(host);
+    
+    // Use WiFiClient class to create TCP connections
+    WiFiClient client;
+    const int httpPort = 80;
+    if (!client.connect(host, httpPort)) {
+      Serial.println("connection failed");
       return;
     }
-  }
+    
+    // We now create a URI for the request
+    String url = "";
+    url += streamId;
+    
+    Serial.print("Requesting URL: ");
+    Serial.println(url);
+    
+    // This will send the request to the server
+    
+    client.print(String("POST ") + url + " HTTP/1.1\r\n" +
+                 "Host: " + host + "\r\n" + 
+                 "Connection: close\r\n\r\n");
+    
+    unsigned long timeout = millis();
+    while (client.available() == 0) {
+      if (millis() - timeout > 5000) {
+        Serial.println(">>> Client Timeout !");
+        client.stop();
+        return;
+      }
+    }
   
-  // Read all the lines of the reply from server and print them to Serial
+    
+    // Read all the lines of the reply from server and print them to Serial
+    
+    while(client.available()){
+      String line = client.readStringUntil('\r');
+      Serial.print(line);
+    }
+    
+    Serial.println();
+    Serial.println("closing connection");
   
-  while(client.available()){
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
-  }
-  
-  Serial.println();
-  Serial.println("closing connection");
-
-
-
-
-}
+ }
 
 
 

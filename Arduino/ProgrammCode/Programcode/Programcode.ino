@@ -6,8 +6,6 @@ dht DHT;
 
 //CO2 Sensor
 #include "Adafruit_CCS811.h"
-
-
 Adafruit_CCS811 ccs;
 
 //light sensor

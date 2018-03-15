@@ -64,6 +64,7 @@ Laravel
 	\item Wärmesensor - Für Raumtemperatur	
 	\item Luftfeuchtigkeit - Für Luftqualität
 	\item Schalter - Für Futtermenge
+	\item kinetischer Motor - für geregelte Luftzufuhr
 	\item WLAN - Für Datenübertragung
 
 \end{itemize}
@@ -71,8 +72,9 @@ Laravel
 \subsection{Gas Sensoren}
 Für die Auswertung der Gaswerte stehen uns mehrere Module zur Verfügung.  Zum einen stand uns die vielfältige MQ-Serie zur Verfügung oder der spezialisierter CCS811 von Adafruit. 
 
-\subsection{MQ Gas Sensoren}
+In der Schule haben wir nicht nur den MQ2 Sensor zur Verfügung bereitgestellt bekommen, sondern auch den Adafruit CCS811. Wir bedanken uns dafür vielmals.
 
+\subsubsection{MQ Gas Sensoren}
 
 \begin{itemize}
 \item {MQ2}
@@ -94,8 +96,8 @@ Für die Auswertung der Gaswerte stehen uns mehrere Module zur Verfügung.  Zum 
 \item Mehr gibt es auf der Website: \cite{MQ_Sensoren}
 \end{itemize}
 
-In der Schule haben wir den MQ2 zur Verfügung stehend werden wir auch von der Schule den Adafruit CCS811 bereitgestellt bekommen. Wir bedanken uns dafür vielmals.
-\newline
+
+
 {\includegraphics[width=0.8\linewidth]{figures/DatasheetMQ2.png}}{\cite{MQ_Datasheet}}
 
 \cite{MQ_Sensoren}
@@ -108,5 +110,38 @@ Im Datasheet \cite{MQ_Datasheet} kann man herauslesen das der Sensor MQ2 \cite{M
 	\item RO: Sensor Widerstand bei 1000ppm von H2 bei sauberer Luft.
 \end{itemize}
 
-\subsection{Adafruit CCS811}
+Da der MQ-2  auf so viele Gase außer Co2 reagiert haben wir uns entschlossen eine Alternative zu suchen. Glücklicherweise hat uns die Schule auch den CCS811 von Adafruit zur Verfügung stellen können,
+
+\subsubsection{Adafruit CCS811}
+
+In unserem Projekt haben wir uns letztendlich für den CCS811 von Adafruit entschieden. Im Gegensatz zu dem MQ-Sensoren erlaubt der CCS811 eCO2 in einem Bereich von 400 bis 8192 ppm (parts per million) auszulesen. 
+Zitiere: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ccs811-air-quality-sensor.pdf
+
+Dadurch können wir uns komplizierte mathematische Formelrechnungen sparen und direkt den gewünschten Datentypen verwenden.
+
+\subsection{Wärmesensor}
+
+\subsubsection{DHT11}
+
+In dem Arduino Uno Set war der DHT 11 Wärme und Temperatur Sensor von Adafruit direkt mitgeliefert. Dieses Modul erlaubt es uns digitale Daten in einem zwei Sekunden Takt auszulesen. Es liest die Wärme in einem Bereich von 0 bis 50°C, die Daten können allerdings um etwa 2°C variieren.
+
+\subsubsection{CCS811}
+
+Der CCS811 besitzt auch einen Thermistor, mit welchem wir direkt die Raumtemperatur auslesen können. Da der DHT11 allerdings auch die Luftfeuchtigkeit anzeigen kann, verwendeten wir diesen anstatt den CCS811. 
+
+\subsection{Luftfeuchtigkeit}
+
+Da der DHT direkt bei dem Arduino Kit mit dabei war, gab es keinen Grund einen anderen Sensor zu suchen. Das Modul erlaubt uns die Luftfeuchtigkeit in einem Bereich von 20 bis 80 Prozent zu messen. Diese Daten können allerdings um beinahe 5\% variieren.  Zitiere: https://cdn-learn.adafruit.com/downloads/pdf/adafruit-ccs811-air-quality-sensor.pdf
+
+\subsection{kinetischer Motor}
+
+Für eine automatisierte Luftzufuhr verwenden wir den Servo-Mikrocontroller SG90. Sowie der DHT 11 war dieser Motor schon im Arduino Uno Set beigelegt. (inset technival data)
+
+\subsection{Hebel}
+
+
+
+\subsection{Datenübertragung}
+
+
 
