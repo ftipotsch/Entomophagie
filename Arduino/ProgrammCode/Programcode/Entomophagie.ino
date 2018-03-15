@@ -27,6 +27,7 @@ int yPosition = 0;
 
 //servo 
 #include <Servo.h>
+int co2Min = 0;
 int servoPin = 9;
 Servo servo;  
 int servoAngle = 0; 
@@ -139,23 +140,24 @@ void loop() {
   
   
   //Servo
-      if(ccs.geteCO2() == 0){
+      if(ccs.geteCO2() <= co2Min){
         
-      
-       //move the micro servo from 0 degrees to 180 degrees
+      //move the micro servo from 0 degrees to 180 degrees
       for(;servoAngle < 180; servoAngle++) {       
            servo.write(servoAngle);              
             delay(10);
-  
-         }
-       
-      } if (ccs.geteCO2() > 0 && servoAngle != 0){
-  
+         } 
+      } if (ccs.geteCO2() > co2Min && servoAngle != 0){
           servo.write(45); 
           servoAngle = 0;
           Serial.println("RETURN");
       }
   
+  //Hebel
+
+  xPosition = analogRead(xPin);
+  Serial.print("X: ");
+  Serial.println(xPosition);
       
   //WIFI
     Serial.print("connecting to ");
