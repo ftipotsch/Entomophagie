@@ -26,16 +26,24 @@ Der Arduino hat zwei Möglichkeiten Daten auszulesen. Einmal spricht man hier vo
 \section{Programmierung}
 
 Um die Daten der einzelnen Sensoren verwenden zu können, müssen diese ausgelesen und sinnvoll wiedergegeben werden. Nur sobald die Sensoren richtig Programmiert und verkabelt sind, kriegt man lesbare Information. Diese können anschließend weiter interpretiert und verwendet werden. 
+In diesem Projekt kann der Quellcode in drei Bereiche eingeteilt werden. 
 
-Die verwendeten Sensoren:
 
-\begin{itemize}
-	\item DHT11
-	\item CCS811
-	\item Hebel
-	\item Servo SG90
-	\item photocell
-\end{itemize}
+
+\subsubsection{Bibliotheken importieren und globale Variablen definieren}
+
+In diesem Schritt importieren wir die nötigen Bibliotheken welche aus GitHub oder direkt von Arduino zur verfügung gestellt bekommen. Auch werden alle Variablen die sowohl in den Methoden Setup und Loop verwendet werden erstellt. 
+
+\subsubsection{Setup}
+
+Die Funktion Setup wird verwendet um einmalige Konfigurationen zu tätigen. Dazu zählen unter anderem Aufbau einer Verbindung, Kalibrierung sensibler Controller oder ähnlichen. Die hier getätigten Aktivitäten werden nur ausgeführt wenn der Arduino startet bzw. zurückgesetzt wird.
+
+\subsubsection{Loop}
+
+Diese Methode verarbeitet und gibt all unsere Werte aus. Besonders an der Klasse Loop ist, dass diese dauerhaft wiederholt wird. Es gibt keine maximale Durchlaufmenge und die Geschwindigkeit eines Durchlaufs wird von der Methode \"delay\" in Millisekunden definiert. Mit Hilfe dieser Eigenschaften, können wir zeitnahe alle Daten auslesen. Falls nun ein Wert eine Mindestgrenze kann sofort darauf reagiert werden. 
+
+Eine genauere Beschreibung der einzelnen Module und deren Programmierung erfolgt in den kommenden Seiten.
+
 
 
 \subsection{DHT11 \& CCS811}
@@ -43,26 +51,29 @@ Die verwendeten Sensoren:
 Für den DHT 11 sowie dem CCS811 gibt es eine von Adafruit frei verwendbare Bibliothek. Mithilfe von dieser kann man ein Objekt erstellen und es mithilfe diesem Objektes die Momentane Temperatur/Luftfeuchtigkeit auslesen.
 
 
-	\includegraphics[width=1\linewidth]{../Bilder/Programmierung/define(DHTCCS)}
+
+Der Parameter \#include fügt externe Klassen in unser Projekt ein und erlaubt es uns in das Objekt dht sowie ccs zu erstellen.
+Des weitere können wir mit dem Parameter \#define relevante Daten festlegen. Ein solches Beispiel ist von welchem Pin Daten empfangen werden.
+
+	\begin{lstlisting}
+	
+	delay(2000);
+	if(ccs.available()){
+		if(!ccs.readData()){
+			Serial.print("CO2: ");
+			Serial.println(ccs.geteCO2());
+		}
+		else{
+			Serial.println("ERROR!");
+			//while(1);
+		}
+	}
+	\end{lstlisting}
+	\cite{CCS811man}
 
 
 
-Das \#include fügt die Klasse in unser Projekt ein und erlaubt es uns das Objekt dht sowie ccs zu erstellen.
-
-Das \#define legt des weiteren fest, dass relevante Daten, im Falle des DHT Moduls, von Pin 2 kommen. 
-
-
-	\includegraphics[width=1.2\linewidth]{../Bilder/Programmierung/setup(CCS)}
-
-
-
-Die Setup Funktion, wird für einmalige Dinge wie die Kalibrierung, dem Starten des Serial Monitors oder der Verbindung mit dem Raspberry verwendet. Der CO2 Sensor benötigt das Setup, da es zuerst kalibriert werden muss um die Luftqualität zu messen.
-
-	\includegraphics[width=0.9\linewidth]{../Bilder/Programmierung/loop(DHTCCS)}
-
-
-
-Die Loop Funktion, wiederholt sich im vorgegebenen Rhythmus immer wieder und gibt keine Variablen zurück. Dort können werden alle Daten ausgelesen und an das WLAN Modul weitergeschickt bzw. in diesem Fall wird es auf den Serial Monitor ausgegeben.
+Die Loop Funktion, wiederholt sich im vorgegebenen Rhythmus immer wieder und gibt keine Variablen zurück. Dort werden alle Daten ausgelesen und an das WLAN Modul weitergeschickt bzw. in diesem Fall wird es auf den Serial Monitor ausgegeben.
 
 Die WENN abfrage prüft als erstes ob der CO2 Sensor kalibriert wurde oder nicht. Falls es gelungen sein sollte gibt es die Werte mit dem Befehl Serial.println(ccs.geteCO2()); im Serial Monitor aus.
 
@@ -73,9 +84,23 @@ Das Joystick bzw. der Hebel konnte direkt abgelesen werden. Wichtig hierbei ist 
 
 \subsection{SG90}
 
-Die vom verwendeten Bibliotheken waren bei der Installierung der Arudino eigenen IDE direkt dabei. Die Servo kontrolliert die Luftzuvor und muss daher Werte vom CCS811 wiederverwenden
+Die vom verwendeten Bibliotheken waren bei der Installierung der Arduino eigenen IDE direkt dabei. Die Servo kontrolliert die Luftzufuhr und muss daher Werte vom CCS811 wiederverwenden
 
-\includegraphics[width=1\linewidth]{../Bilder/Programmierung/loop(SG)}
+\begin{lstlisting}
+
+  if(ccs.geteCO2() <= co2Min){
+	//move the micro servo from 0 degrees to 180 degrees
+	for(;servoAngle < 180; servoAngle++) {       
+		servo.write(servoAngle);              
+		delay(10);
+	} 
+} if (ccs.geteCO2() > co2Min && servoAngle != 0){
+		servo.write(45); 
+		servoAngle = 0;
+		Serial.println("RETURN");
+}
+\end{lstlisting}
+\cite{SG90tut}
 
 Die If Abfrage prüft ob CO2 einen Mindestwert (co2Min) unterschreitet. Falls das passiert  wird eine Schleife ausgeführt die den Servo 180° dreht. Diese 180° würde die Lüftungsklappe aufhalten. Falls der CO2 Wert wieder in einem akzeptablen Bereich liegt und die Position des Motors nicht null beträgt, wird die zweite Schleife aktiviert die den Motor zur Position 0 zurückbringt 
 

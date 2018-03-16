@@ -91,7 +91,7 @@
   author = {Calin Dragos},
   title  = {Tutorial: How To Control the Tower Pro SG90 Servo with Arduino UNO},
   month  = oct,
-  year   = {2016},
+  year   = {2},
   url    = {https://www.intorobotics.com/tutorial-how-to-control-the-tower-pro-sg90-servo-with-arduino-uno/},
 }
 
