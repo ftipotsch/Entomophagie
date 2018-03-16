@@ -138,7 +138,7 @@ Unsere Webapp ist in Yii2 programmiert und ist deshalb nach dem MVC Muster aufge
 \subsection{MVC - Model, View, Controller}\label{sec:MVC}
 
 \subsubsection{Was ist MVC?} 
-MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für Anwendungen die ein User Interface beinhalten. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
+MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für Anwendungen die ein User Interface beinhalten, eingesetzt wird. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
 
 \subsubsection{Vor- und Nachteile}
 \begin{tabular}{ l r }
@@ -160,7 +160,7 @@ Im Grunde arbeitet MVC mit 3 Klassen:
 Die Unterschiedlichen Klassen haben unterschiedliche Aufgaben.
 
 \subsubsection{View}
-Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es Benutzer Eingaben entgegen.
+Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces verantwortlich. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es alle Benutzer/innen Eingaben entgegen.
 \subsubsection{Controller}
 Die Controller Klasse Steuert die ganze Anwendung, sie nimmt die User eingaben von der View Klasse entgegen und verarbeitet diese. Außerdem ändert sie auch die View Klasse um andere Seiten anzuzeigen. Sie nimmt auch die Daten von der Modell Klasse entgegen, verarbeitet diese und gibt sie an die View Klasse weiter.
 \subsubsection{Modell}
@@ -177,21 +177,17 @@ CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
 	\item Delete - Löschen von Datensätzen
 \end{itemize}
 \cite{CRUD}
-
-\subsubsection{Vor- und Nachteile}
-\begin{tabular}{ l r }
-	Vorteile & Nachteile \\
-	
-\end{tabular}
+\newline
+CRUD ist für alle Datenbankzugriffe verantwortlich die gemacht werden.
 
 
 \subsection{Yii2} \label{sec:YII2}
 
 \subsubsection{Was ist Yii}
-Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert die User aktiv im Web mitzumachen. Diese können eigenen Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
 
 \subsubsection{Gii} \label{sec:gii}
-Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiter verlauf dann nach eigenen Wünschen verändern.
+Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiterm Verlauf dann nach eigenen Wünschen verändern.
 
 \subsubsection{Vor- und Nachteile}
 Yii hat sehr viele Vorteile, allerdings auch einig Nachteile:
@@ -204,46 +200,38 @@ Vorteile sind:
 	\item Einfach Datenbankzugriffe
 \end{itemize}
 
-Nachteile ist der Hohe Setup aufwand und die benötigten Kenntnisse in PHP und SQL.
+Nachteile ist der Hohe Setup aufwand und die benötigte Kenntnisse in PHP und SQL, welche allerdings bei fast allen Frameworks von Nöten sind.
 
 
 \subsection{Benutzerschnittstellen} 
 
-Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen das man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer auf dem Kasten Registrieren, und dadurch auf die Daten zugreifen welche für die jeweilige Seriennummer gespeichert sind zugreifen.
+Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen das man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer die man beim Kauf eines Kasten erhält registrieren. Dadurch kann man dann auf die Daten zugreifen welche für die jeweilige Seriennummer gespeichert sind.
 \newline
-Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden.
+Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden da es den Rahmen dieses Projektes Sprengen würde.
 \subsection{Datenhaltunskonzept}
 Hier ist unser ER-Diagramm
 
 	\includegraphics[height=1000pt]{figures/ERDiagramm}
 	\newline
-	Die Datenbank werden wir bei unserem Web Hoster anlegen und dort alle Daten bis zu 7 Tage Speichern. Daten sollen alle 5-10 Minuten von unserem Brutkasten übermittelt werden. Zur Übermittlung werden wir ein WLAN Modul an unserem Brutkasten anbringen. Mehr dazu im Kapitel \nameref{sec:daten}. Für Prototyp Zwecken werden wir die Daten vorerst auf einen Raspberry Pi 3 speichern.
+	Die Datenbank werden wir bei unserem Web Hoster anlegen und dort alle Daten bis zu 7 Tage Speichern. Daten sollen alle 5-10 Minuten von unserem Brutkasten übermittelt werden. Zur Übermittlung werden wir ein WLAN Modul an unserem Brutkasten anbringen. Mehr dazu im Kapitel \nameref{sec:daten}. Für Prototyp Zwecken werden wir die Daten vorerst lokal über PHPMyAdmin speichern.
+	\newpage
+	\def \currentAuthor{}
 \subsection{Konzept für Ausnahmebehandlung}
 \begin{itemize}
 	\item Systemweite Festlegung, wie mit Exceptions umgegangen wird
 	\item Exceptions sind primär aus den Bereichen UI, Persistenz, Workflow-Management
 \end{itemize}
-
+	\newpage
+	\def \currentAuthor{Florian Tipotsch}
 \subsection{Sicherheitskonzept}
-Beschreibung aller sicherheitsrelevanten Designentscheidungen
 
-\begin{itemize}
-	\item Design der Security-Elemente
-	\item Design von Safety-Elementen (Fehlertoleranz, Verfügbarkeit etc.)
-\end{itemize}
+Auf unsere Website kann man sich mithilfe von Username und Password anmelden. Im Weiteren verlauf des Projektes besteht noch die Möglichkeit für unsere Rest Schnittelle eine Authentifizierung einzubauen. Da unser Prototyp allerdings nur lokal vorhanden ist ist dies zum jetzigen Zeitpunk noch nicht notwendig.
 
 \subsection{Design der Testumgebung}
-\begin{itemize}
-	\item wie wird getestet (Unit-Testing, Integrationstesting, Systemtests, Akzeptanztests)
-	\item Testumgebung, Testprozess, Teststrategie, Testmethoden, Testfälle
-\end{itemize}
-
+Unseren Protoyp testen wird indem wir ihn einen Tag autonom laufen lassen und am Ende dieser 24h Periode alle Daten kontrollieren ob diese Sinn machen und der Realität entsprechen. Um dies zu gewährleisten bräuchten wir allerdings einen Klima Regulierten Raum der Co2 messen kann.
 
 \subsection{Desing der Ausführungsumgebung}
-\begin{itemize}
-	\item Deployment (DevOps)
-	\item Betrieb (besonders Hoch- und Hertunerfahren der Anwendung)
-\end{itemize}
+Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem anstecken an eine Stromversorgung und dem Verbinden mit dem Internet, sowie das einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/ die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren der Temperatur sowie Co2 Werten damit die Insekten Überleben können.
 
 \section{Detailentwurf}
 
@@ -307,9 +295,83 @@ Zu Codesequenzen:
 	
 \end{itemize}
 
-\input{inp_Florian.tex}
-\input{inp_Kevin.tex}
-\input{inp_Leonid.tex}
+\def \currentAuthor {Florian Tipotsch}
+
+\section{Webapp}
+
+Für unser Projekt erstellen wir eine Webapp mit der man die Daten seiner eigenen Zuchtkammer anzeigen lassen kann.
+Wir haben geplant das man sich mit der Seriennummer der Box Registrieren kann und dann am Handy über eine Webapp alle Daten anzeigen lassen kann. Folgende Daten sollte man auslesen können:
+
+\begin{itemize}
+	\item Sauerstoff
+	\item Luftfeuchtigkeit
+	\item Gewicht
+	\item Temperatur
+	\item Futtermenge
+	\item ungefähre Zeit bis zu Reife
+\end{itemize}
+Als Grundlage für die Website haben wir das Framework Yii2 verwendet. Mehr dazu im Kapitel \nameref{sec:YII2}.
+
+\subsection{Mockups}
+\includegraphics[height=10cm]{figures/Logedin}
+Hier sieht man die Ansicht wenn man auf unserer Website Angemeldet ist. Man kann auf seine eigene Zuchtkammer zugreifen indem man auf den Button 'Meine Zuchtkammer' klickt und dort die Daten auslesen.
+\newpage
+\includegraphics[height=10cm]{figures/Meine-Zuchtkammer}
+Auf der Seite 'Meine Zuchtkammer' sieht die letzten Daten die die Zuchtkammer wiedergegeben hat. Diese sind in Absteigender Reihenfolge geordnet,dass heißt, dass der letzte Eintrag ganz oben steht.
+\newpage
+\includegraphics[height=10cm]{figures/NotlogedIN}
+Hier Sieht man die Ansicht wenn man auf unserer Website nicht Angemeldet ist. Man kann über den Button 'Zuchtkammer' mehr über unsere Zuchtkammern herausfinden, weiter kann man über den Button 'Kaufen' seine eigene Zuchtkammer kaufen. Bei Signup kann man sich als neuer Benutzer registrieren, um sich allerdings zu registrieren brauch man zuerst eine Seriennummer die man beim kauf einer Zuchtkammer erhält.
+\newpage
+
+\subsection{Datenbankzugriffe}
+Unserer Datenbank zugriffe werden von unserem Framework verarbeite, dabei verwendet das Framework CRUD befehle und arbeitet nach dem MVC Muster. Das heißt es gibt ein unterliegendes Modell welches Daten an unseren Controller mitgibt welche wiederum die View erzeugt.
+
+Der gesamte Datenbankzugriff kann mittels Yii2 sehr einfach erstellt werden. Mehr dazu siehe \nameref{sec:gii}
+
+\subsection{Datenübermittlung} \label{sec:daten}
+
+Um die Daten von unsrem Arduino an unsere Datenbank zu senden werden wir in den Brutkasten ein WLAN Modul einbauen und die Daten alle 5-10 Minuten als JSON-Format an unsere REST-Schnittstelle unserer Webapp senden. Hierfür haben wir das WLAN Modul ESP8266 verwendet. Das hat den Vorteil das unsere Daten direkt von unserem Brutkasten an die Datenbank gegeben werden kann.
+\newline
+Für diese Lösung brauchen wir eine REST Schnittelle in unserer Webapp. Dies kann über YII2 sehr einfach realisiert werden. Yii2 hat eine vor implementierte REST Schnittelle welche man nur noch aktivieren muss. Die Daten werden aus der Modell Klasse ausgelesen und über den Controller an die REST-View weitergeleitet. Die ganze Implementierung sind 5-10 Zeilen Code. Die Code Sequenz sehen sie im Kapitel \nameref{sec:Rest}.
+
+\subsection{Rest Schnittelle} \label{sec:Rest}	
+\includegraphics{figures/Ordner}
+\newline
+Hier sieht man die Ordnerstruktur. Wir erstellen im Obersten Verzeichnis einen neuen Ordner namens 'api' um im Web über folgende \newline URL:'www.entomophagie/api/web/v1/datas' auf unsere Restschnittelle Zugreifen können. Dabei müssen wir darauf achten das wir Groß- und Kleinschreibung beachten. Da es sonst passieren kann das wir keine Anzeige bekommen. Um dieses Problem zu lösen ist es am einfachsten alle Ordner in unserem Verzeichnis immer klein zuschreiben.\newline
+Weiters Kopieren wir 'web', 'config' und den 'runtime' Ordner aus unserem Front- bzw. Backend Ordner. 
+\newline
+\includegraphics{figures/Controller}
+\newline
+Hier sieht man die Controller Klasse. In der Controller Klasse müssen wir den Yii eigenen ActiveController einbinden und die Modell Klasse festlegen welche die Daten ausliest.
+\newline
+\includegraphics{figures/Modul}
+\newline
+Hier sieht man die Module Klasse. In der Module Klasse wird unser neuer Rest Controller initialisiert, damit unsere Anwendung diese Verwenden kann. Dort müssen wir unseren Controller den wir zuvor erstellt haben festlegen.
+\newline
+Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt}.
+
+
+\section{Arduino}
+
+
+\subsection{Wlan}
+Für die Implementierung der Wlan anbiendung haben wir ein ESP8266 verwendet. Das Modul ist sehr einfach einzurichten das ganze haben wir mit den Beispielen von den ESP8266 in der Arduino IDE gemacht.
+\newline
+\includegraphics{figures/wlanConnect}
+\newline
+Hier sieht man den Verbindungsaufbau des ESP8266. In der Zeile WIFI.begin wird dann die Verbindung gestarted vorher übergeben wir die SSID und das Password des WLAN womit das Modul sich verbinden soll.
+\newline
+\includegraphics{figures/wlanSucess}
+\newline
+Bei erfolgreicher Verbindung wird die IP Adresse unseres Moduls ausgegeben.
+\newline
+\includegraphics{figures/wlanGet}
+\newline
+
+Anschließend können wir in unserer Loop REST Befehle wie Get, Post, Put, etc ausführen.
+
+
+
 
 \chapter{Deployment}
 \begin{itemize}
