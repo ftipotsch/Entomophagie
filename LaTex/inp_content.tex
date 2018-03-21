@@ -302,8 +302,9 @@ Unseren Protoyp testen wird indem wir ihn einen Tag autonom laufen lassen und am
 \subsection{Desing der Ausführungsumgebung}
 Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem anstecken an eine Stromversorgung und dem Verbinden mit dem Internet, sowie das einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/ die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren der Temperatur sowie Co2 Werten damit die Insekten Überleben können.
 
-\begin{itemize}
-	\item Design-Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
+\section{Detailentwurf}
+n USE-Cases
+Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
 	\item Sequenzdiagramme vom System-Sequenz-Diagramm ableiten
 	\item Aktivitätsdiagramme
 	\item Detaillierte Zustandsdiagramme für wichtige Klassen
@@ -501,6 +502,7 @@ Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt
 
 
 \newpage
+<<<<<<< HEAD
 \def \currentAuthor {Kevin Glatz}
 \section{Verkablung}
 
@@ -527,6 +529,11 @@ In dieser Grafik kann man die Verkablung aller Module sehen. Abgebildet von link
 Die größte Herausforderung bot der CCS811 sowie der ESP8266, da beide keine typische Verkabelung verwenden. Wie man an der Grafik erkennen kann werden mehrere Strom oder Datenquellen benötigt.
 
 \subsection{CCS811}
+=======
+\section{Arduino}
+Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
+ mit stromfluss einfügen)
+>>>>>>> 3e06afbabfa374741d0d74fa5cbde2bc3cc60033
 
 Der CCS811 benötigt weder digitale noch analoge Werte da er die Pins von der I2C Uhr und Datenlinien verwendet. Des weiteren ist es wichtig anzumerken das dieser Sensor nur mit Mikrocontroller funktioniert die intern I2C "clock streching" unterstützen. In unserem Projekt mussten wir nur die Steckplätze SCL und SDA für den CO2 Sensor verwenden und es funktionierte.
 
@@ -539,7 +546,15 @@ Da der ESP als eingestehende Netzwerkschnittelle zählt braucht diese besonders 
 Der Joystick verwendet ursprünglich zwei analoge Pins und einen Analogen. Damit benötigt dieser Mikrocontroller die meisten Pins. Damit eine variable X und Y Achse ausgelesen werden kann benötigen wir die zwei analogen Pins. Der digitale Wert fungiert als Knopfdruck, dieser kann in unserem Projekt allerdings ignoriert werden. Auf die X Ache können wir hingegen nicht verzichten, da beide Werte benötigt werden um die Position auslesen zu können.
 
 
+<<<<<<< HEAD
 \section{Programmierung}
+=======
+\subsubsection{Bibliotheken importieren und globale Variablen definieren}
+itHub oder direkt von Arduino zur verfügung gestellt bekommen. Auch werden alle Variablen die sowohl in den Methoden Setup und Loop verwendet werden erstellt. 
+äten werden nur ausgeführt wenn der Arduino startet bzw. zurückgesetzt wird.
+en definiert. Mit Hilfe dieser Eigenschaften, können wir zeitnahe alle Daten auslesen. Falls nun ein Wert eine Mindestgrenze kann sofort darauf reagiert werden. 
+kt kann der Quellcode in drei Bereiche eingeteilt werden. 
+>>>>>>> 3e06afbabfa374741d0d74fa5cbde2bc3cc60033
 
 
 \subsection{DHT11 \& CCS811}
