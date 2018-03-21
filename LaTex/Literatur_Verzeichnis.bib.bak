@@ -115,6 +115,12 @@
   title     = {ESP8266 Library},
   timestamp = {2018-03-21},
   url       = {https://github.com/esp8266/Arduino},
+}
+
+@Misc{laravel,
+  title     = {Larvel Documentation},
+  timestamp = {2018-03-21},
+  url       = {https://laravel.com/docs/5.6},
 >>>>>>> 29e9cd106eabb3e649d693a2af0d0b3a7e569dcf
 }
 
