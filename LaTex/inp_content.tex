@@ -338,10 +338,35 @@ Optimierung des Entwurfs (Modularisierung, Erweiterbarkeit, Lesbarkeit):
 \newpage
 \def \currentAuthor{Kevin Glatz}
 
-\section{Programmierung}
+\section{Arduino}
+
+Die erfolgreiche Verwendung des Arduino besteht aus zwei  Punkten:
+\begin{itemize}
+	\item Verkablung der einzelnen Module 
+	\item Programmierung
+\end{itemize}
+
+Wir können vor allem dem Programmcode um einiges vereinfachen indem wir diesen in drei Unterbereiche aufteilen, wobei jedes Abteil eine fest zugeteilte Aufgabe bekommt. Dasselbe zählt für die Verkablung der einzelnen Module, da diese mit einer strukturierten Farbkodierung übersichtlicher werden.
+
 
 \subsection{Verkablung}
-Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
+\begin{figure}[h]
+	
+	\includegraphics[width=0.7\linewidth]{figures/VerkablungStrukturplan.png}
+	\caption{Arduino mit Breadboard}
+	\label{fig:verkablungstrukturplan}
+\end{figure}
+
+In Abbildung  6.2 können wir nun den Arduino und das Breadboard sehen.  Für eine einfachere Unterscheidung der Kabel verwenden wir ein simples Farbschema. Rot steht für die Stromzufuhr, grün für die Datenauslesung und blau für die Erdung.
+
+
+Die untersten und obersten zwei Zeilen, lassen den Strom bzw. die Erdung horizontal laufen.  Die Steckplätze darüber leiten hingegen jegliche Information vertikal. Ein wichtiges Detail ist das man Stromzufuhr auf der horizontalen Plus reihe platziert (in der Grafik anhand der roten Linie zu sehen), da ansonsten keine Energie ankommt. Bei den vertikalen Steckplätzen gibt es allerdings keine negativ oder positiv gepolten Spalten.
+
+Worauf man bei der Datenauslesung achten muss, ist das Arduino  zwei Möglichkeiten dafür verwendet. Zum einen gibt es digitale Daten, welche einen Wert von 1 oder 0 besitzten können. Die Alternative dafür sind analoge Daten, die einen Wert von 0 bis 1023 Wahrnehmen können.
+
+Vereinfacht erklärt werden bei digitalen Pins entweder 0 oder 5 Volt gelesen und bei analogen Pins 5 Volt durch 1024 Werte geteilt. Je nachdem wie viel Stromzufuhr das Modul hat, kann es somit einen Datenwert um einiges genauer zurückgeben
+\cite{analogRead}
+
 
 
 
@@ -476,33 +501,45 @@ Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt
 
 
 \newpage
-\section{Arduino}
-
 \def \currentAuthor {Kevin Glatz}
 \section{Verkablung}
 
+Die tatsächliche Verkablung der einzelnen Module war am Anfang recht komplex. Trotz des richtigen Setups unterliefen Fehler die verhinderten das Daten sinnvoll ausgelesen werden konnten. Verwendung von Widerständen führte zu falschen oder unrealistischen Daten, da der Strom der darüber lief zu gering war bzw. der Widerstand zu hoch. 
 
-\subsection{Aufbau}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/allMod}
+	\caption{Verkablung aller Module}
+	\label{fig:allmod}
+\end{figure}
 
-(bild einfügen)
+In dieser Grafik kann man die Verkablung aller Module sehen. Abgebildet von links anfangend:
 
-In Abbildung x können wir nun den Arduino und das Breadboard sehen.  Dort kann man direkt die drei Farben erkennen die jeweils für Stromzufuhr (blau), Datenauslesung (grün) und Erdung (braun) stehen.
+\begin{itemize}
+	\item Servomotor SG0
+	\item WLAN Modul ESP8266
+	\item Joystick Modul (oben)
+	\item Lichtempfindlichkeit (unten)
+	\item Temperatur und Luftfeuchtigkeitssensor DHT11
+	\item CO2 Sensor CCS811
+\end{itemize}
 
-(bild mit stromfluss einfügen)
+Die größte Herausforderung bot der CCS811 sowie der ESP8266, da beide keine typische Verkabelung verwenden. Wie man an der Grafik erkennen kann werden mehrere Strom oder Datenquellen benötigt.
 
-Hier sieht man wie der Strom im Breadboard fließt. Das heißt wenn man in der Untersten Reihe das Board mit 5 Volt versorgt sind alle weiteren Steckplätze verwendbar. Wichtig hierbei ist, dass das Kabel für die Stromzufuhr auch auf der richtigen Reihe platziert wurde. Das erkennt man bei dieser Leiterplatte an dem Plus und Minus Zeichen Plus steht hierbei für Strom und Minus für die Erdung.
+\subsection{CCS811}
 
-Falls man das Falsch verkabelt funktioniert das Modul nicht, es werden allerdings keine Schäden angerichtet
+Der CCS811 benötigt weder digitale noch analoge Werte da er die Pins von der I2C Uhr und Datenlinien verwendet. Des weiteren ist es wichtig anzumerken das dieser Sensor nur mit Mikrocontroller funktioniert die intern I2C "clock streching" unterstützen. In unserem Projekt mussten wir nur die Steckplätze SCL und SDA für den CO2 Sensor verwenden und es funktionierte.
 
+\subsection{ESP8266}
 
-(Bild mit analog und digitalwerten einfügen)
+Da der ESP als eingestehende Netzwerkschnittelle zählt braucht diese besonders viel Energie. Daher muss man beim Verkabeln vor allem darauf achten dass beide Stromanschlüsse richtig plaziert wurden. Ähnlich wie das CO2 Messmodul verwendet der WLAN Adapter 2 Datenpins. Diese sind allerdings beide digital und können an beliebigen stellen zwischen 0 und 13 gesetzt werden
 
-Der Arduino hat zwei Möglichkeiten Daten auszulesen. Einmal spricht man hier von digitaler und analogen Datenauslesung. (internet suche) Digitale Werte bedeutet hier allerdings nur das der ausgelesene Wert als 0 oder 1 abgespeichert werden kann, analoge Daten sind bei diesem Punkt anders, da diese einen Wert zwischen 0 und x haben können (zitat)
+\subsection{Joystick Modul}
+
+Der Joystick verwendet ursprünglich zwei analoge Pins und einen Analogen. Damit benötigt dieser Mikrocontroller die meisten Pins. Damit eine variable X und Y Achse ausgelesen werden kann benötigen wir die zwei analogen Pins. Der digitale Wert fungiert als Knopfdruck, dieser kann in unserem Projekt allerdings ignoriert werden. Auf die X Ache können wir hingegen nicht verzichten, da beide Werte benötigt werden um die Position auslesen zu können.
+
 
 \section{Programmierung}
-
-Um die Daten der einzelnen Sensoren verwenden zu können, müssen diese ausgelesen und sinnvoll wiedergegeben werden. Nur sobald die Sensoren richtig Programmiert und verkabelt sind, kriegt man lesbare Information. Diese können anschließend weiter interpretiert und verwendet werden. 
-In diesem Projekt kann der Quellcode in drei Bereiche eingeteilt werden. 
 
 
 \subsection{DHT11 \& CCS811}
@@ -571,7 +608,7 @@ Die If Abfrage prüft ob CO2 einen Mindestwert (co2Min) unterschreitet. Falls da
 \subsection{Wlan}
 Für die Implementierung der Wlan anbiendung haben wir ein ESP8266 verwendet. Das Modul ist sehr einfach einzurichten das ganze haben wir mit den Beispielen von den ESP8266 in der Arduino IDE gemacht.
 
-\subsection{ESP8266}
+\subsubsection{ESP8266}
 Das Wlan Modul ESP866 wird verwendet um die Verbindung mit dem Internet aufzubauen und die Daten mithilfe der Rest Schnittelle an unsere Website senden. Dafür haben wir die ESP8266 Library von Arduino verwendet.\cite{esp8266}
 \begin{lstlisting}[caption=Verbindungsaufbau des ESP8266]
 	#include <ESP8266.h>
@@ -672,18 +709,16 @@ Für einen Insekten Zuchtkasten existiert in der westlichen Welt keine große Na
 
 \subsection{Kostenrechnung}
 
-\Section{Nutzen einer Website}
+Die Kostenrechnung ist ein mächtiges Werkzeug die mehrere wichtige Aufgabenbereiche deckt. Dazu zählen unter anderem Grundlagen der Preisbildung, Verwendung als Entscheidungsinstrument oder auch als Planungsinstrument. Grundlage für die gängigen Kostenrechnungsarten besteht aus der Istkostenrechnung, diese listet alle tatsächlich angefallenen Kosten eines Produktes oder einer Periode auf. \cite{KORE}
+
+\newpage
+\def \currentAuthor {Florian Tipotsch}
+\section{Nutzen einer Website}
 Es ist immer wichtiger für Unternehmen eine Website zu besitzen den für viele Personen ist das Internet der erste Ansprechpartner um Informationen zu erhalten. Dabei ist es wichtig das man die gewünschte Website schnell und einfach findet. Dafür ist eine gute Search engine optimation(SEO) wichtig, damit die Website in Google auf der Ersten Seite angezeigt wird. Das ist deshalb wichtig da die zweite Ergebnis Seite von Google oft ignoriert wird.
 
 Auch in unserem Projekt haben wir eine Website erstellt, diese ist allerdings eine Reine Funktionswebsite. Deshalb kann man auf unserer Website erst nur Daten seines Brutkasten auslesen. Man könnte die Website noch mit einem Webshop erweitern, da dies allerdings den Rahmen des Projektes sprengen würde haben wir dies nicht gemacht.
 
 Auf Websiten ist es auch wichtig dass das Unternehmen widergespiegelt wird, deshalb sollte man dort möglichst ein Corporate Design anwenden falls eines vorhanden ist. Den in der heutigen Modernen Zeit ist es für viele der Erste Eindruck über ein Unternehmen.
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 54e20bb2c86065d713b6bc9c404b8e7788b12287
-
 
 \chapter{Zusammenfassung}
 \begin{itemize}

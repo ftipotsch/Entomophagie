@@ -1,13 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{esp8266}
-Esp8266 library.
-\newblock URL: \url{https://github.com/esp8266/Arduino}.
-
-\bibitem{laravel}
-Larvel documentation.
-\newblock URL: \url{https://laravel.com/docs/5.6}.
-
 \bibitem{W3schools}
 W3schools.
 \newblock URL: \url{https://www.w3schools.com/}.
@@ -20,6 +12,12 @@ Web hypertext application technology working group.
 World wide web consortium.
 \newblock URL: \url{https://www.w3.org/}.
 
+\bibitem{analogRead}
+Arduino.
+\newblock analogread().
+\newblock URL:
+  \url{https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/}.
+
 \bibitem{MQ_Sensoren}
 Arduino.
 \newblock Mqgassensor.
@@ -31,6 +29,12 @@ Calin Dragos.
   October 2.
 \newblock URL:
   \url{https://www.intorobotics.com/tutorial-how-to-control-the-tower-pro-sg90-servo-with-arduino-uno/}.
+
+\bibitem{ArdAgra}
+Thomas Fischer.
+\newblock Arduino projekte in der landwirtschaft und fischzucht, June 2017.
+\newblock URL:
+  \url{https://www.expertenderit.de/blog/arduino-projekte-in-der-landwirtschaft-und-fischzucht}.
 
 \bibitem{MQ_Datasheet}
 LTD HANWEI ELETRONICS~CO.
