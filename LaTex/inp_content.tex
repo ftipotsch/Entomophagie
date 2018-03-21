@@ -302,8 +302,9 @@ Unseren Protoyp testen wird indem wir ihn einen Tag autonom laufen lassen und am
 \subsection{Desing der Ausführungsumgebung}
 Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem anstecken an eine Stromversorgung und dem Verbinden mit dem Internet, sowie das einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/ die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren der Temperatur sowie Co2 Werten damit die Insekten Überleben können.
 
-\begin{itemize}
-	\item Design-Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
+\section{Detailentwurf}
+n USE-Cases
+Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
 	\item Sequenzdiagramme vom System-Sequenz-Diagramm ableiten
 	\item Aktivitätsdiagramme
 	\item Detaillierte Zustandsdiagramme für wichtige Klassen
@@ -477,18 +478,8 @@ Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt
 
 \newpage
 \section{Arduino}
-
-\def \currentAuthor {Kevin Glatz}
-\section{Verkablung}
-
-
-\subsection{Aufbau}
-
-(bild einfügen)
-
-In Abbildung x können wir nun den Arduino und das Breadboard sehen.  Dort kann man direkt die drei Farben erkennen die jeweils für Stromzufuhr (blau), Datenauslesung (grün) und Erdung (braun) stehen.
-
-(bild mit stromfluss einfügen)
+Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
+ mit stromfluss einfügen)
 
 Hier sieht man wie der Strom im Breadboard fließt. Das heißt wenn man in der Untersten Reihe das Board mit 5 Volt versorgt sind alle weiteren Steckplätze verwendbar. Wichtig hierbei ist, dass das Kabel für die Stromzufuhr auch auf der richtigen Reihe platziert wurde. Das erkennt man bei dieser Leiterplatte an dem Plus und Minus Zeichen Plus steht hierbei für Strom und Minus für die Erdung.
 
@@ -501,8 +492,11 @@ Der Arduino hat zwei Möglichkeiten Daten auszulesen. Einmal spricht man hier vo
 
 \section{Programmierung}
 
-Um die Daten der einzelnen Sensoren verwenden zu können, müssen diese ausgelesen und sinnvoll wiedergegeben werden. Nur sobald die Sensoren richtig Programmiert und verkabelt sind, kriegt man lesbare Information. Diese können anschließend weiter interpretiert und verwendet werden. 
-In diesem Projekt kann der Quellcode in drei Bereiche eingeteilt werden. 
+\subsubsection{Bibliotheken importieren und globale Variablen definieren}
+itHub oder direkt von Arduino zur verfügung gestellt bekommen. Auch werden alle Variablen die sowohl in den Methoden Setup und Loop verwendet werden erstellt. 
+äten werden nur ausgeführt wenn der Arduino startet bzw. zurückgesetzt wird.
+en definiert. Mit Hilfe dieser Eigenschaften, können wir zeitnahe alle Daten auslesen. Falls nun ein Wert eine Mindestgrenze kann sofort darauf reagiert werden. 
+kt kann der Quellcode in drei Bereiche eingeteilt werden. 
 
 
 \subsection{DHT11 \& CCS811}
