@@ -542,11 +542,14 @@ if(ccs.geteCO2() <= co2Min){
 
 Die If Abfrage prüft ob CO2 einen Mindestwert (co2Min) unterschreitet. Falls das passiert  wird eine Schleife ausgeführt die den Servo 180° dreht. Diese 180° würde die Lüftungsklappe aufhalten. Falls der CO2 Wert wieder in einem akzeptablen Bereich liegt und die Position des Motors nicht null beträgt, wird die zweite Schleife aktiviert die den Motor zur Position 0 zurückbringt 
 
-
+\newpage
 \def \currentAuthor {Florian Tipotsch}
 \newpage
 \subsection{Wlan}
 Für die Implementierung der Wlan anbiendung haben wir ein ESP8266 verwendet. Das Modul ist sehr einfach einzurichten das ganze haben wir mit den Beispielen von den ESP8266 in der Arduino IDE gemacht.
+
+\subsection{ESP8266}
+Das Wlan Modul ESP866 wird verwendet um die Verbindung mit dem Internet aufzubauen und die Daten mithilfe der Rest Schnittelle an unsere Website senden. Dafür haben wir die ESP8266 Library von Arduino verwendet.\cite{esp8266}
 \begin{lstlisting}
 	#include <ESP8266.h>
 	

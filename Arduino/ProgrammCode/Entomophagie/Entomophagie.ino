@@ -43,6 +43,11 @@ int LEDbrightness; //
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 29e9cd106eabb3e649d693a2af0d0b3a7e569dcf
 void setup() {
  Serial.begin(115200); 
  //DHT
@@ -133,8 +138,17 @@ void loop() {
   xPosition = analogRead(xPin);
   Serial.print("X: ");
   Serial.println(xPosition);
+<<<<<<< HEAD
        
 }
+=======
+      
+  
+
+    
+  
+ }
+>>>>>>> 29e9cd106eabb3e649d693a2af0d0b3a7e569dcf
 
 
 
