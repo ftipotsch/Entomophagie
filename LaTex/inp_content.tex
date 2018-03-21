@@ -297,10 +297,6 @@ Unseren Protoyp testen wird indem wir ihn einen Tag autonom laufen lassen und am
 \subsection{Desing der Ausführungsumgebung}
 Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem anstecken an eine Stromversorgung und dem Verbinden mit dem Internet, sowie das einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/ die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren der Temperatur sowie Co2 Werten damit die Insekten Überleben können.
 
-\section{Detailentwurf}
-
-Design jedes einzelnen USE-Cases
-
 \begin{itemize}
 	\item Design-Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
 	\item Sequenzdiagramme vom System-Sequenz-Diagramm ableiten
@@ -333,6 +329,31 @@ Optimierung des Entwurfs (Modularisierung, Erweiterbarkeit, Lesbarkeit):
 	\item SOLID
 	\item Entwurfsmuster einsetzen
 \end{itemize}
+
+\newpage
+\def \currentAuthor{Kevin Glatz}
+
+\section{Programmierung}
+
+\subsection{Verkablung}
+Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
+
+
+
+\subsubsection{Bibliotheken importieren und globale Variablen definieren}
+
+In diesem Schritt importieren wir die nötigen Bibliotheken welche aus GitHub oder direkt von Arduino zur verfügung gestellt bekommen. Auch werden alle Variablen die sowohl in den Methoden Setup und Loop verwendet werden erstellt. 
+
+\subsubsection{Setup}
+
+Die Funktion Setup wird verwendet um einmalige Konfigurationen zu tätigen. Dazu zählen unter anderem Aufbau einer Verbindung, Kalibrierung sensibler Controller oder ähnlichen. Die hier getätigten Aktivitäten werden nur ausgeführt wenn der Arduino startet bzw. zurückgesetzt wird.
+
+\subsubsection{Loop}
+
+Diese Methode verarbeitet und gibt all unsere Werte aus. Besonders an der Klasse Loop ist, dass diese dauerhaft wiederholt wird. Es gibt keine maximale Durchlaufmenge und die Geschwindigkeit eines Durchlaufs wird von der Methode \"delay\" in Millisekunden definiert. Mit Hilfe dieser Eigenschaften, können wir zeitnahe alle Daten auslesen. Falls nun ein Wert eine Mindestgrenze kann sofort darauf reagiert werden. 
+
+Eine genauere Beschreibung der einzelnen Module und deren Programmierung erfolgt in den kommenden Seiten.
+
 
 \chapter{Implementierung}
 Detaillierte Beschreibung der Implementierung aller Teilkomponenten der Software entlang der zentralsten Use-Cases:
@@ -442,7 +463,6 @@ Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt
 \def \currentAuthor {Kevin Glatz}
 \section{Verkablung}
 
-Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
 
 \subsection{Aufbau}
 
@@ -467,23 +487,6 @@ Um die Daten der einzelnen Sensoren verwenden zu können, müssen diese ausgeles
 In diesem Projekt kann der Quellcode in drei Bereiche eingeteilt werden. 
 
 
-
-\subsubsection{Bibliotheken importieren und globale Variablen definieren}
-
-In diesem Schritt importieren wir die nötigen Bibliotheken welche aus GitHub oder direkt von Arduino zur verfügung gestellt bekommen. Auch werden alle Variablen die sowohl in den Methoden Setup und Loop verwendet werden erstellt. 
-
-\subsubsection{Setup}
-
-Die Funktion Setup wird verwendet um einmalige Konfigurationen zu tätigen. Dazu zählen unter anderem Aufbau einer Verbindung, Kalibrierung sensibler Controller oder ähnlichen. Die hier getätigten Aktivitäten werden nur ausgeführt wenn der Arduino startet bzw. zurückgesetzt wird.
-
-\subsubsection{Loop}
-
-Diese Methode verarbeitet und gibt all unsere Werte aus. Besonders an der Klasse Loop ist, dass diese dauerhaft wiederholt wird. Es gibt keine maximale Durchlaufmenge und die Geschwindigkeit eines Durchlaufs wird von der Methode \"delay\" in Millisekunden definiert. Mit Hilfe dieser Eigenschaften, können wir zeitnahe alle Daten auslesen. Falls nun ein Wert eine Mindestgrenze kann sofort darauf reagiert werden. 
-
-Eine genauere Beschreibung der einzelnen Module und deren Programmierung erfolgt in den kommenden Seiten.
-
-
-
 \subsection{DHT11 \& CCS811}
 
 Für den DHT 11 sowie dem CCS811 gibt es eine von Adafruit frei verwendbare Bibliothek. Mithilfe von dieser kann man ein Objekt erstellen und es mithilfe diesem Objektes die Momentane Temperatur/Luftfeuchtigkeit auslesen.
@@ -493,7 +496,8 @@ Für den DHT 11 sowie dem CCS811 gibt es eine von Adafruit frei verwendbare Bibl
 Der Parameter \#include fügt externe Klassen in unser Projekt ein und erlaubt es uns in das Objekt dht sowie ccs zu erstellen.
 Des weitere können wir mit dem Parameter \#define relevante Daten festlegen. Ein solches Beispiel ist von welchem Pin Daten empfangen werden.
 
-\begin{lstlisting}
+
+\begin{lstlisting}[language=C, caption=Datenauslesung CCS811, label=code:CCS811read]
 
 delay(2000);
 if(ccs.available()){
@@ -507,6 +511,7 @@ if(ccs.available()){
 	}
 }
 \end{lstlisting}
+
 \cite{CCS811man}
 
 
@@ -524,7 +529,7 @@ Das Joystick bzw. der Hebel konnte direkt abgelesen werden. Wichtig hierbei ist 
 
 Die vom verwendeten Bibliotheken waren bei der Installierung der Arduino eigenen IDE direkt dabei. Die Servo kontrolliert die Luftzufuhr und muss daher Werte vom CCS811 wiederverwenden
 
-\begin{lstlisting}
+\begin{lstlisting}[language=C, caption=Automatisierten Servobewegung bei zu niedrigen CO2 Werten, label=code:SG90]
 
 if(ccs.geteCO2() <= co2Min){
 	//move the micro servo from 0 degrees to 180 degrees
@@ -639,7 +644,7 @@ falls im Projekt gefordert
 
 \newpage
 \chapter{Betriebswirtschaftlicher Kontext}
-<<<<<<< HEAD
+
 
 \def \currentAuthor {Kevin Glatz}
 \subsection{Arduino in der Wirtschaft}
@@ -649,7 +654,7 @@ Mikrocontroller gewinnen vor allem beim Endverbraucher immer mehr an Qualität, 
 Für einen Insekten Zuchtkasten existiert in der westlichen Welt keine große Nachfrage, im Asiatischen Raum könnte ein solches Produkt hingegen große Popularität gewinnen. In der Kostenrechnung werden die einzelnen Teile nochmals genauer besprochen, allerdings ist der Anschaffungswert alle benötigten Teile unter € 100. 
 
 \subsection{Kostenrechnung}
-=======
+
 \Section{Nutzen einer Website}
 Es ist immer wichtiger für Unternehmen eine Website zu besitzen den für viele Personen ist das Internet der erste Ansprechpartner um Informationen zu erhalten. Dabei ist es wichtig das man die gewünschte Website schnell und einfach findet. Dafür ist eine gute Search engine optimation(SEO) wichtig, damit die Website in Google auf der Ersten Seite angezeigt wird. Das ist deshalb wichtig da die zweite Ergebnis Seite von Google oft ignoriert wird.
 
@@ -657,7 +662,7 @@ Auch in unserem Projekt haben wir eine Website erstellt, diese ist allerdings ei
 
 Auf Websiten ist es auch wichtig dass das Unternehmen widergespiegelt wird, deshalb sollte man dort möglichst ein Corporate Design anwenden falls eines vorhanden ist. Den in der heutigen Modernen Zeit ist es für viele der Erste Eindruck über ein Unternehmen.
 
->>>>>>> 2413a246626a7dd2b461f442dc37b782743167c1
+
 
 
 \chapter{Zusammenfassung}
