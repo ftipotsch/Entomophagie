@@ -132,9 +132,12 @@ Projektziele-Hierarchie - SMART
 \end{table}
 
 \subsection{Gant-Chart}
-\hspace*{-2cm}   
-\includegraphics[width=530pt]{figures/Gant} 
-
+  
+\begin{figure} 
+\hspace*{-2cm}
+\includegraphics[width=530pt]{figures/Gant}
+\caption{Unser Gant Chart für das Projekt} 
+\end{figure}
 \subsection{Abnahmekriterien}
 Die Abnahmekriterien wurden von unserem Auftraggeber so gesetzt das es einen Prototypen geben soll welcher Daten auslesen kann und darauf reagiert.
 \subsection{Pläne zur Evaluierung}
@@ -274,8 +277,10 @@ Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die We
 Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden da es den Rahmen dieses Projektes Sprengen würde.
 \subsection{Datenhaltunskonzept}
 Hier ist unser ER-Diagramm
-
+	\begin{figure}
 	\includegraphics[height=1000pt]{figures/ERDiagramm}
+	\caption{ERDiagramm unserer Datenbank}
+	\end{figure}
 	\newline
 	Die Datenbank werden wir bei unserem Web Hoster anlegen und dort alle Daten bis zu 7 Tage Speichern. Daten sollen alle 5-10 Minuten von unserem Brutkasten übermittelt werden. Zur Übermittlung werden wir ein WLAN Modul an unserem Brutkasten anbringen. Mehr dazu im Kapitel \nameref{sec:daten}. Für Prototyp Zwecken werden wir die Daten vorerst lokal über PHPMyAdmin speichern.
 	\newpage
@@ -398,13 +403,22 @@ Wir haben geplant das man sich mit der Seriennummer der Box Registrieren kann un
 Als Grundlage für die Website haben wir das Framework Yii2 verwendet. Mehr dazu im Kapitel \nameref{sec:YII2}.
 
 \subsection{Mockups}
+\begin{figure}
 \includegraphics[height=10cm]{figures/Logedin}
+\caption{Mockup unserer Seite wenn man eingeloggt ist}
+\end{figure}
 Hier sieht man die Ansicht wenn man auf unserer Website Angemeldet ist. Man kann auf seine eigene Zuchtkammer zugreifen indem man auf den Button 'Meine Zuchtkammer' klickt und dort die Daten auslesen.
 \newpage
+\begin{figure}
 \includegraphics[height=10cm]{figures/Meine-Zuchtkammer}
+\caption{Mockup der Seite Meine-Zuchtkammer}
+\end{figure}
 Auf der Seite 'Meine Zuchtkammer' sieht die letzten Daten die die Zuchtkammer wiedergegeben hat. Diese sind in Absteigender Reihenfolge geordnet,dass heißt, dass der letzte Eintrag ganz oben steht.
 \newpage
+\begin{figure}
 \includegraphics[height=10cm]{figures/NotlogedIN}
+\caption{Mockup unserer Seite wenn man nicht eingeloggt ist}
+\end{figure}
 Hier Sieht man die Ansicht wenn man auf unserer Website nicht Angemeldet ist. Man kann über den Button 'Zuchtkammer' mehr über unsere Zuchtkammern herausfinden, weiter kann man über den Button 'Kaufen' seine eigene Zuchtkammer kaufen. Bei Signup kann man sich als neuer Benutzer registrieren, um sich allerdings zu registrieren brauch man zuerst eine Seriennummer die man beim kauf einer Zuchtkammer erhält.
 \newpage
 
@@ -419,12 +433,15 @@ Um die Daten von unsrem Arduino an unsere Datenbank zu senden werden wir in den 
 \newline
 Für diese Lösung brauchen wir eine REST Schnittelle in unserer Webapp. Dies kann über YII2 sehr einfach realisiert werden. Yii2 hat eine vor implementierte REST Schnittelle welche man nur noch aktivieren muss. Die Daten werden aus der Modell Klasse ausgelesen und über den Controller an die REST-View weitergeleitet. Die ganze Implementierung sind 5-10 Zeilen Code. Die Code Sequenz sehen sie im Kapitel \nameref{sec:Rest}.
 
-\subsection{Rest Schnittelle} \label{sec:Rest}	
+\subsection{Rest Schnittelle} \label{sec:Rest}
+\begin{figure}	
 \includegraphics{figures/Ordner}
+\caption{Abbildung des API Ordners}
+\end{figure}
 \newline
 Hier sieht man die Ordnerstruktur. Wir erstellen im Obersten Verzeichnis einen neuen Ordner namens 'api' um im Web über folgende \newline URL:'www.entomophagie/api/web/v1/datas' auf unsere Restschnittelle Zugreifen können. Dabei müssen wir darauf achten das wir Groß- und Kleinschreibung beachten. Da es sonst passieren kann das wir keine Anzeige bekommen. Um dieses Problem zu lösen ist es am einfachsten alle Ordner in unserem Verzeichnis immer klein zuschreiben.\newline
 Weiters Kopieren wir 'web', 'config' und den 'runtime' Ordner aus unserem Front- bzw. Backend Ordner. 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Controller Klasse für REST]
 <?php
 
 namespace api\modules\v1\controllers;
@@ -435,8 +452,9 @@ class DataController extends Active Controller
 	public $modelClass = 'common\models\Data';
 }
 \end{lstlisting}
+
 Hier sieht man die Controller Klasse. In der Controller Klasse müssen wir den Yii eigenen ActiveController einbinden und die Modell Klasse festlegen welche die Daten ausliest.
-\begin{lstlisting}
+\begin{lstlisting}[caption=Module Klasse für REST]
 <?php
 
 namespace api\modules\v1;
@@ -555,7 +573,7 @@ Für die Implementierung der Wlan anbiendung haben wir ein ESP8266 verwendet. Da
 
 \subsection{ESP8266}
 Das Wlan Modul ESP866 wird verwendet um die Verbindung mit dem Internet aufzubauen und die Daten mithilfe der Rest Schnittelle an unsere Website senden. Dafür haben wir die ESP8266 Library von Arduino verwendet.\cite{esp8266}
-\begin{lstlisting}
+\begin{lstlisting}[caption=Verbindungsaufbau des ESP8266]
 	#include <ESP8266.h>
 	
 	const char* ssid = "SSID des Benutzers";
@@ -580,7 +598,7 @@ Das Wlan Modul ESP866 wird verwendet um die Verbindung mit dem Internet aufzubau
 
 Hier sieht man den Verbindungsaufbau des ESP8266. In der Zeile WIFI.begin wird dann die Verbindung gestarted vorher übergeben wir die SSID und das Password des WLAN womit das Modul sich verbinden soll.
 \newpage
-\begin{lstlisting}
+\begin{lstlisting}[caption=Verbindungsaufbau Response]
 	while(WiFi.status() != WL_CONNECTED) {
 	delay(500);
 	Serial.print(".");
@@ -598,7 +616,7 @@ Hier sieht man den Verbindungsaufbau des ESP8266. In der Zeile WIFI.begin wird d
 
 Bei erfolgreicher Verbindung wird die IP Adresse unseres Moduls ausgegeben.
 
-\begin{lstlisting}
+\begin{lstlisting}[caption=Ausführung der REST Befehle]
 client.print(String("GET ) + url + " HTTP/1.1\r\n)" +
 	"Host: " + host + "\r\n" + 
 	"Connection: close\r\n\r\n");
@@ -609,7 +627,6 @@ while(millis() - timeout > 5000) {
 	return;
 }
 \end{lstlisting}
-
 Anschließend können wir in unserer Loop REST Befehle wie Get, Post, Put, etc ausführen.
 
 
@@ -662,7 +679,10 @@ Auch in unserem Projekt haben wir eine Website erstellt, diese ist allerdings ei
 
 Auf Websiten ist es auch wichtig dass das Unternehmen widergespiegelt wird, deshalb sollte man dort möglichst ein Corporate Design anwenden falls eines vorhanden ist. Den in der heutigen Modernen Zeit ist es für viele der Erste Eindruck über ein Unternehmen.
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 54e20bb2c86065d713b6bc9c404b8e7788b12287
 
 
 \chapter{Zusammenfassung}
