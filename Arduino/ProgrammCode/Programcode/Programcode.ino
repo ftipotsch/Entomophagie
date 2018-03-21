@@ -14,12 +14,7 @@ int photocellReading;
 
 
 void setup(void) {
-<<<<<<< HEAD
- Serial.begin(9600);    
-=======
- Serial.begin(115200);    // We'll send debugging information via the Serial monitor so if you can read it   without using a led
->>>>>>> b3494c7f2b075e9658ab6fe846f56bf028deec88
-  
+
  Serial.println("CCS811 test");
   
   if(!ccs.begin()){
