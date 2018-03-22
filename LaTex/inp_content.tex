@@ -103,11 +103,11 @@ Projektziele-Hierarchie - SMART
 		
 		4     & Datenbank                        & Kevin Glatz                    \\
 		4.1   & ER-Diagramm                      & Florian Tipotsch + Kevin Glatz \\
-		4.2   & Sprache Wählen                   & Florian Tipotsch               \\
+		4.2   & Sprache Wählen & Florian Tipotsch               \\
 		4.3   & HTML Seite mit Daten             & Florian Tipotsch               \\
 		5     & Nachforschung (Leo)              & Leonid Hammer                  \\
 		5.1   & Welches Tier                     & Leonid Hammer                  \\
-		5.2   & Wie viele                        & Leonid Hammer                  \\
+		5.2   & Wie viele Tiere                        & Leonid Hammer                  \\
 		5.3   & Futter                           & Leonid Hammer                  \\
 		6     & Webapp                           & Florian Tipotsch               \\
 		6.1   & Prototyp                         & Florian Tipotsch               \\
@@ -139,9 +139,9 @@ Projektziele-Hierarchie - SMART
 \caption{Unser Gant Chart für das Projekt} 
 \end{figure}
 \subsection{Abnahmekriterien}
-Die Abnahmekriterien wurden von unserem Auftraggeber so gesetzt das es einen Prototypen geben soll welcher Daten auslesen kann und darauf reagiert.
+Die Abnahmekriterien wurden von unserem Auftraggeber so gesetzt, dass es einen Prototypen geben soll, welcher Daten auslesen kann und darauf reagiert.
 \subsection{Pläne zur Evaluierung}
-Zuerst wollen wird die Daten auf unserem Arduino auslesen und diese dann mithilfe eines Wlan Modul es an unsere Website senden.
+Zuerst wollen wird die Daten auf unserem Arduino auslesen und diese dann mit Hilfe eines Wlan Moduls an unsere Website senden.
 
 
 \chapter{Brutkasten}
@@ -233,17 +233,17 @@ Unsere Webapp ist in Yii2 programmiert und ist deshalb nach dem MVC Muster aufge
 \subsection{MVC - Model, View, Controller}\label{sec:MVC}
 
 \subsubsection{Was ist MVC?} 
-MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster das meist für Anwendungen die ein User Interface beinhalten, eingesetzt wird. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
+MVC, auch Model, View, Controller ist ein modernes Entwurfsmuster, welches meist für Anwendungen, die ein User Interface beinhalten, eingesetzt wird. Zum Beispiel für PHP, JAVA, C\# und Ruby Anwendungen. \cite{MVC}
 
 \subsubsection{Vor- und Nachteile}
-\begin{tabular}{ l r }
-	Vorteile & Nachteile \\
+\begin{tabular}{ l l }
+	Vorteile: & Nachteile: \\
 	Gleichzeitiges Programmieren & Schlechte Übersicht \\
 	Hohe Kohäsion \cite{kohaesion} & Konsistente Programmierung notwendig\\
 	Lose Kopplung \cite{kopplung} & Steile Lernkurve \\	
 \end{tabular}
 
-Das MVC Entwurfsmuster ist sehr weit verbreitet und hoch angesehen, es wird deshalb in den meisten Anwendungen mit User Interface angewandt. Der Grund für die Verwendung dieses Musters sind die Vielen Vorteile die es bietet. Außerdem können viel Nachteile über Frameworks behoben werden.
+Das MVC Entwurfsmuster ist sehr weit verbreitet und hoch angesehen. Es wird deshalb in den meisten Anwendungen mit User Interface angewandt. Der Grund für die Verwendung dieses Musters sind die vielen Vorteile die es bietet. Außerdem können viele Nachteile über Frameworks behoben werden.
 
 \subsubsection{Aufbau von MVC}
 Im Grunde arbeitet MVC mit 3 Klassen:
@@ -252,14 +252,14 @@ Im Grunde arbeitet MVC mit 3 Klassen:
 	\item View
 	\item Controller
 \end{itemize}
-Die Unterschiedlichen Klassen haben unterschiedliche Aufgaben.
+Die verschiedenen Klassen haben unterschiedliche Aufgaben.
 
 \subsubsection{View}
 Die View Klasse ist nur zum Anzeigen der einzelnen Teile des User Interfaces verantwortlich. Bei Webseiten zum Beispiel die Index Seite oder das Login Formular. Außerdem nimmt es alle Benutzer/innen Eingaben entgegen.
 \subsubsection{Controller}
-Die Controller Klasse Steuert die ganze Anwendung, sie nimmt die User eingaben von der View Klasse entgegen und verarbeitet diese. Außerdem ändert sie auch die View Klasse um andere Seiten anzuzeigen. Sie nimmt auch die Daten von der Modell Klasse entgegen, verarbeitet diese und gibt sie an die View Klasse weiter.
+Die Controller Klasse steuert die ganze Anwendung. Sie nimmt die User eingaben von der View Klasse entgegen und verarbeitet diese. Außerdem ändert sie auch die View Klasse um andere Seiten anzuzeigen. Sie nimmt auch die Daten von der Modell Klasse entgegen, verarbeitet diese und gibt sie an die View Klasse weiter.
 \subsubsection{Modell}
-Die Modell Klasse enthält die darzustellenden Daten, sie ist unabhängig von der View und der Controller Klasse
+Die Modell Klasse enthält die darzustellenden Daten. Sie ist unabhängig von der View und der Controller Klasse
 
 \subsection{CRUD - Create, Read, Update, Delete} \label{sec:CRUD}
 
@@ -273,19 +273,20 @@ CRUD sind die 4 grundlegenden Aufgaben einer Datenbankanbindung:
 \end{itemize}
 \cite{CRUD}
 \newline
-CRUD ist für alle Datenbankzugriffe verantwortlich die gemacht werden.
+CRUD ist für alle Datenbankzugriffe verantwortlich die getätigt werden.
 
 
 \subsection{Yii2} \label{sec:YII2}
 
 \subsubsection{Was ist Yii}
-Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+YII ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
 
 \subsubsection{Gii} \label{sec:gii}
-Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit ihm kann man sehr einfach eine Model Klasse mit einer Unterliegenden Datenbanktabelle erstellen. Aus dieser Model klasse kann man dann wiederum CRUD befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiterm Verlauf dann nach eigenen Wünschen verändern.
+Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit Gii kann man sehr einfach eine Model Klasse mit einer unterliegenden Datenbanktabelle erstellen. Aus dieser Model Klasse kann man dann wiederum CRUD Befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiterm Verlauf dann nach eigenen Wünschen verändern.
 
 \subsubsection{Vor- und Nachteile}
-Yii hat sehr viele Vorteile, allerdings auch einig Nachteile:
+Yii hat sehr viele Vorteile, allerdings auch einige Nachteile:
+\newline
 Vorteile sind:
 
 \begin{itemize}
@@ -295,21 +296,22 @@ Vorteile sind:
 	\item Einfach Datenbankzugriffe
 \end{itemize}
 
-Nachteile ist der Hohe Setup aufwand und die benötigte Kenntnisse in PHP und SQL, welche allerdings bei fast allen Frameworks von Nöten sind.
+Nachteile ist der Hohe Setup-Aufwand und die benötigte Kenntnisse in PHP und SQL, welche allerdings bei fast allen Frameworks von Nöten sind.
 
 
 \subsection{Benutzerschnittstellen} 
 
-Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen das man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer die man beim Kauf eines Kasten erhält registrieren. Dadurch kann man dann auf die Daten zugreifen welche für die jeweilige Seriennummer gespeichert sind.
+Die Benutzerschnittstelle unseres Brutkasten besteht hauptsächlich über die Webapp. Dort kann man sich anmelden und die Daten für den eigenen Brutkasten auslesen. Um sicherzugehen, dass man nur die eigenen Daten sieht, muss man sich auf der Website mit der Seriennummer, die man beim Kauf eines Kasten erhält, registrieren. Dadurch kann man dann auf die Daten zugreifen, welche für die jeweilige Seriennummer gespeichert sind.
 \newline
 Wenn man noch nicht registriert wird kann man auf der Website einen Link zu unserem Webshop sehen, den wir allerdings nicht in diesem Projekt erstellen werden da es den Rahmen dieses Projektes Sprengen würde.
+\newpage
 \subsection{Datenhaltunskonzept}
 Hier ist unser ER-Diagramm
-	\begin{figure}
-	\includegraphics[height=1000pt]{figures/ERDiagramm}
+	\begin{figure}[H]
+	\includegraphics[height=500pt]{figures/ERDiagramm}
 	\caption{ERDiagramm unserer Datenbank}
 	\end{figure}
-	\newline
+	
 	Die Datenbank werden wir bei unserem Web Hoster anlegen und dort alle Daten bis zu 7 Tage Speichern. Daten sollen alle 5-10 Minuten von unserem Brutkasten übermittelt werden. Zur Übermittlung werden wir ein WLAN Modul an unserem Brutkasten anbringen. Mehr dazu im Kapitel \nameref{sec:daten}. Für Prototyp Zwecken werden wir die Daten vorerst lokal über PHPMyAdmin speichern.
 	\newpage
 	\def \currentAuthor{}
