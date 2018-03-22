@@ -1,22 +1,38 @@
-\def \currentAuthor {} %so kann jederzeit der Autor geändert werden -> wird in der Fusszeile angezeigt.
-
-\chapter*{Einleitende Bemerkungen}
-
-\chapter*{Notationen}
-Beschreibung wie Code, Hinweise, Zitate etc. formatiert werden  
-
+\def \currentAuthor{Kevin Glatz}
 \chapter{Einleitung}
+
+Das Projekt entstand als der biologische Bereich der Universität Innsbruck das Thema Entomophagie behandelte. Entomophagie beschreibt den menschlichen Konsum von Insekten, eine Tätigkeit die im asiatischen Raum gängig ist. Das Ziel von diesem Projekt ist es aufzuzeigen wie simpel und ressourcenschonend die Zucht von Insekten in einem künstlichen automatisierten Lebensraum ist.
+
+\subsubsection{Vorteile}
+
+Massentierhaltung und riesige Monokulturen zerstören das natürliche Ökosystem der Erde, das Problem wird nicht vereinfacht indem die gesamte Bevölkerung jährlich steigt. Insekten sind nicht nur eine nahrhafte Möglichkeit diese Nachfrage zu erfüllen, sondern sind auch weniger schadhaft für den Planeten.
+
+Ein weiterer Vorteil besteht auch darin das jeder Insekten bei sich daheim züchten kann  und dabei auch vergleichsweise kostengünstig bei der Anschaffung bleibt.
+
 
 \chapter{Projektmanagement}
 
 \section{Metainformationen}
 \subsection{Team}
+Unser Team bestand ursprünglich aus 4 Personen. Da ein Schüler sich ungeplant vom Team entfernt hat, daher umfasst das Projektteam 3 Schüler. Projektleiter Leonid Hammer sowie die Gruppenmitglieder Florian Tipotsch und  Kevin Glatz.
+
 \subsection{Betreuer}
+Die Lehrpersonen Stefan Stolz, MSc und Mag. Nina Margreiter erklärten sich bereit diese Projekt zu betreuen. Herr Professor Stolz betreute den technischen Teil der Arbeit und Frau Professor Margreiter den betriebswirtschaftlichen Bereich.
+
 \subsection{Partner}
+Der Projektpartner ist die technische Universität Innsbruck. Das Projekt umfangt die Erstellung eines Prototypen für einen automatisierten Insektenbrutkasten.
+
 \subsection{Ansprechpartner}
+Die Ansprechpartner zu diesem Projekt waren selbstverständlich unsere Projektbetreuer sowie ao. Univ.-Prof. Thorsten Schwerte.
+
 \section{Vorerhebungen}
 \subsection{Projektzieleplan}
-Projektziele-Hierarchie - SMART
+
+\begin{figure}
+	\includegraphics[height=10cm]{figures/Zielhierachie}
+	\caption{Zielplan Hierarchie}
+\end{figure}
+
 \subsection{Projektumfeld}
 \begin{itemize}
 	\item Identifikation der Stakeholder
@@ -28,47 +44,7 @@ Projektziele-Hierarchie - SMART
 \begin{itemize}
 	\item Risikomatrix
 \end{itemize}
-\section{Pflichtenheft}
-\subsection{Zielbestimmung}
-\begin{itemize}
-	\item Projektbeschreibung
-	\item IST-Zustand
-	\item SOLL-Zustand
-	\item NICHT-Ziele (Abgrenzungskriterien)
-\end{itemize}
-\subsection{Produkteinsatz und Umgebung}
-\begin{itemize}
-	\item Anwendungsgebiet
-	\item Zielgruppen
-	\item Betriebsbedingungen
-	\item Hard-/Softwareumgebung
-\end{itemize}
-\subsection{Funktionalitäten}
-\begin{itemize}
-	\item MUSS-Anforderungen
-	\begin{itemize}
-		\item Funktional
-		\item Nicht-funktional
-	\end{itemize}
-	\item KANN-Anforderungen
-	\begin{itemize}
-		\item Funktional
-		\item Nicht-funktional
-	\end{itemize}
-\end{itemize}
-\subsection{Testszenarien und Testfälle}
-\begin{itemize}
-	\item Beschreibung der Testmethodik
-	\item Testfall 1
-	\item Testfall 2
-	\item \ldots
-\end{itemize}
-\subsection{Liefervereinbarung}
-\begin{itemize}
-	\item Lieferumfang
-	\item Modus
-	\item Verteilung(Deployment)
-\end{itemize}
+
 \section{Planung}
 \subsection{Projektstrukturplan}
 \def \currentAuthor{Florian Tipotsch}
@@ -147,29 +123,35 @@ Zuerst wollen wird die Daten auf unserem Arduino auslesen und diese dann mit Hil
 \chapter{Brutkasten}
  Hier werden wir uns dem Aufbau, der Planung und  Ausführung des Brutkastens widmen. 
 \section{Equipment Liste}
-<<<<<<< HEAD
-=======
+
 \begin{itemize}
 	\item Technisches Equipment
 	\begin{itemize}
 		\item Arduino
-		\item 
-		\item 
-		\item 
-		\item 
-		\item 
+		\item Raspberry Pi 
 	\end{itemize}
-	\item
-	\item
-	\item
-	\item
-	\item
+	\item Baumaterial
+	\begin{itemize}
+		\item Holzplatten
+		\item Karton
+		\item Plexiglas
+	\end{itemize}
 \end{itemize}
->>>>>>> e8789ee381fee91b0f79c6ec71ee475cf6d9f17d
+
 
 \section{Überprüfen des Equipments}
 
+Wir überprüfen das Material und technische Equipment auf Fehler bei der Lieferung oder auf Mängel bei den Holzplatten.
+
+\begin{itemize}
+	\item Holzplatten Dicke: 0,5cm Länge: 200 cm Breite: 100 cm
+	\item Karton Wellkarton Dicke: 1cm 
+	\item Plexiglas Stärke 0,4cm Länge: 50 cm Breite: 25 cm 
+\end{itemize}
 \section{Equipment Kaufen}
+\item Plexiglas: bei OBI Baumarkt Preis: 5,49€
+\item Holzplatten: nicht brauchbares Material von Tischler in Barwies 0,00€
+\item Karton Alte stabile Umzugskartons
 \section{Konzeptzeichnung}
 \section{Zeichnen}
 \section{Bauen}
@@ -184,44 +166,6 @@ Zuerst wollen wird die Daten auf unserem Arduino auslesen und diese dann mit Hil
 \end{itemize}
 
 \input{inp_tech.tex}
-
-\chapter{Problemanalyse}
-\section{USE-Case-Analyse}
-\begin{itemize}
-	\item UseCases auf Basis von Benutzerzielen identifizieren: 
-	\begin{itemize}
-		\item Benutzer eines Systems identifizieren
-		\item Benutzerziele identifizieren (Interviews)
-		\item Use-Case-Liste pro Benutzer definieren
-	\end{itemize}
-	\item UseCases auf Basis von Ereignissen identifizieren: 
-	\begin{itemize}
-		\item Externes Event triggert einen Prozess
-		\item zeitliches Event triggert einen Prozess (Zeitpunkt wird erreicht) 
-		\item State-Event (Zustandsänderung im System triggert einen Prozess)
-	\end{itemize}
-	\item Werkzeuge:
-	\begin{itemize}
-		\item USE-Case-Beschreibungen (textuell, tabellarisch)
-		\item USE-Case-Diagramm
-		\item Aktivitätsdiagramm für den Use-Case (Interaktion zwischen Akteur und System abbilden)
-		\item System-Sequenzdiagramm (Spezialfall eines Sequenzdiagramms: Nur 1 Akteur und 1 Objekt, das Objekt ist das komplette System, es geht um die Input/Output Requirements, die abzubilden sind)
-	\end{itemize}
-\end{itemize}
-
-\section{Domain-Class-Modelling}
-\begin{itemize}
-	\item "Dinge" (Rollen, Einheiten, Geräte, Events etc.) identifizieren, um die es im Projekt geht
-	\item ER-Modellierung oder Klassendiagramme
-	\item Zustandsdiagramme (zur Darstellung des Lebenszyklus von Domain-Klassen darstellen)
-\end{itemize}
-
-\section{User-Interface-Design}
-\begin{itemize}
-	\item Mockups
-	\item Wireframes
-\end{itemize}
-
 
 \chapter{Systementwurf}
 
@@ -533,7 +477,6 @@ Wir haben den Rest Controller mit folgendem Online Tutorial erstellt \cite{Restt
 
 
 \newpage
-<<<<<<< HEAD
 \def \currentAuthor {Kevin Glatz}
 \section{Verkablung}
 
@@ -559,12 +502,13 @@ In dieser Grafik kann man die Verkablung aller Module sehen. Abgebildet von link
 
 Die größte Herausforderung bot der CCS811 sowie der ESP8266, da beide keine typische Verkabelung verwenden. Wie man an der Grafik erkennen kann werden mehrere Strom oder Datenquellen benötigt.
 
-\subsection{CCS811}
-=======
+
+
 \section{Arduino}
 Die Verkablung der einzelnen Module ist aus verschiedenen Gründen wichtig. Zum einen brauch jedes Modul genügend Strom um seine Aufgabe zu erfüllen, gleichzeitig würde es aber ohne die Erdung zu einem Kurzschluss kommen. Des weiteren ist es wichtig das die Module Daten auslesen und weitersenden können
  mit stromfluss einfügen)
->>>>>>> 3e06afbabfa374741d0d74fa5cbde2bc3cc60033
+ 
+ \subsection{CCS811}
 
 Der CCS811 benötigt weder digitale noch analoge Werte da er die Pins von der I2C Uhr und Datenlinien verwendet. Des weiteren ist es wichtig anzumerken das dieser Sensor nur mit Mikrocontroller funktioniert die intern I2C "clock streching" unterstützen. In unserem Projekt mussten wir nur die Steckplätze SCL und SDA für den CO2 Sensor verwenden und es funktionierte.
 
@@ -722,25 +666,6 @@ Anschließend können wir in unserer Loop REST Befehle wie Get, Post, Put, etc a
 	\item DevOps-Thema
 \end{itemize}
 
-\chapter{Tests}
-
-\section{Systemtests} 
-Systemtests aller implementierten Funktionalitäten lt. Pflichtenheft
-\begin{itemize}
-	\item Beschreibung der Teststrategie
-	\item Testfall 1
-	\item Testfall 2
-	\item Tesfall 3
-	\item …
-\end{itemize}
-
-\section{Akzeptanztests}
-
-\chapter{Projektevaluation}
-siehe Projektmanagement-Unterricht
-
-\chapter{Benutzerhandbuch} 
-falls im Projekt gefordert
 
 \newpage
 \chapter{Betriebswirtschaftlicher Kontext}
@@ -748,14 +673,43 @@ falls im Projekt gefordert
 
 \def \currentAuthor {Kevin Glatz}
 \subsection{Arduino in der Wirtschaft}
-Mikrocontroller gewinnen vor allem beim Endverbraucher immer mehr an Qualität, allerdings wird auch im Landwirtschaftlichen Bereich von diesen Technologien Gebrauch gemacht. In dem Artikel \"Arduino Projekte in der Landwirtschaft und Fischzucht\" wird beschrieben wie Privatpersonen ihre eigene Lösung zu Problemen wie Fischzucht, Lenksysteme für Erntemaschinen und weitere Fälle gestalten. 
+
+Mikrocontroller gewinnen vor allem beim Endverbraucher immer mehr an Popularität, allerdings wird auch im Landwirtschaftlichen Bereich von diesen Technologien Gebrauch gemacht. In dem Artikel \"Arduino Projekte in der Landwirtschaft und Fischzucht\" wird beschrieben wie Privatpersonen ihre eigene Lösung zu Problemen wie Fischzucht, Lenksysteme für Erntemaschinen und weitere Fälle gestalten. 
 \cite{ArdAgra}
 
-Für einen Insekten Zuchtkasten existiert in der westlichen Welt keine große Nachfrage, im Asiatischen Raum könnte ein solches Produkt hingegen große Popularität gewinnen. In der Kostenrechnung werden die einzelnen Teile nochmals genauer besprochen, allerdings ist der Anschaffungswert alle benötigten Teile unter € 100. 
+Arduino Mikrocontroller werden im wirtschaftlichen Bereich nicht genutzt, da es ein Werkzeug zur Prototyp Erstellung  ist. Die einzelnen Module werden hingegen auch im professionellen Raum verwendet. Der wirtschaftliche Vorteil von Mikrocontroller besteht nicht nur in der Größe, die es für Beinahe jeden Bereich verwendbar machen, sondern auch der geringe Preis und die Automatisierung, welche mit dieser Technik ermöglicht wird. Man kann damit nicht nur potentiell Personal sparen, sondern auch permanent Werte einlesen und überwachen. Das erlaubt es uns in der Medizin oder Meerestierforschung schneller einzugreifen falls die Daten einen Mindestwert unterschreiten
+
+Für einen Insekten Zuchtkasten existiert in der westlichen Welt keine große Nachfrage, im Asiatischen Raum könnte ein solches Produkt hingegen große Popularität gewinnen. In der Kostenrechnung werden die einzelnen Teile nochmals genauer besprochen, allerdings ist der Anschaffungswert alle benötigten Teile unter € 500. 
 
 \subsection{Kostenrechnung}
 
-Die Kostenrechnung ist ein mächtiges Werkzeug die mehrere wichtige Aufgabenbereiche deckt. Dazu zählen unter anderem Grundlagen der Preisbildung, Verwendung als Entscheidungsinstrument oder auch als Planungsinstrument. Grundlage für die gängigen Kostenrechnungsarten besteht aus der Istkostenrechnung, diese listet alle tatsächlich angefallenen Kosten eines Produktes oder einer Periode auf. \cite{KORE}
+Die Kostenrechnung ist ein mächtiges Werkzeug die mehrere wichtige Aufgabenbereiche deckt. Dazu zählen unter anderem Grundlagen der Preisbildung, Verwendung als Entscheidungsinstrument oder auch als Planungsinstrument. Grundlage für die gängigen Kostenrechnungsarten besteht aus der Ist-Kostenrechnung, diese listet alle tatsächlich angefallenen Kosten eines Produktes oder einer Periode auf. \cite{KORE}
+
+Die gesamten Kosten unseres Projekt beträgt wie folgend beschrieben. Die tatsächlichen Ausgaben sind allerdings um einiges geringer, da wir ein Teil der Module schon besetzt habe oder von der Schule zur verfügung gestellt bekommen haben.
+
+
+	\centering
+\newline
+\caption{Kostenrechnung}
+\label{KORE}
+\begin{tabular}{lll}
+	Fichten	Leimholzplatte						 & € 8,97 		                  \\
+	Plexiglas                   				 & € 10,99                        \\
+	Arduino Uno							    	 & € 25,94                        \\
+	Lochrasterleiterplatte		                 & € 2,65                   	  \\
+	40-Piece Jumper Wire 						 & € 6,49						  \\
+	Adafruit CCS811 Air Quality Sensor     		 & € 22,98                        \\
+	DHT11 Digital Humidity Temperature Sensor    & € 4,99                         \\
+	ESP8266 WLAN/WiFi Module		             & € 6,29                         \\
+	Servo Micro 9g SG90 						 & € 11,70   					  \\
+	Joystick Dual Axis Module                    & € 3,99                  		  \\
+	Raspberry Pi 896 8860 3 Model B  			 & € 31,95					      \\
+	SanDisk Ultra 16 GB SDHC          			 & € 10,99                        \\
+																				  \\
+	Summe										 & € 147,94						  \\
+\end{tabular}
+\end{table}
+
 
 \newpage
 \def \currentAuthor {Florian Tipotsch}
