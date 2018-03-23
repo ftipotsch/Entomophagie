@@ -81,51 +81,6 @@ Die Risikomatrix ist ein einfaches Tool die Wahrscheinlichkeit und Verheerung vo
 
 	
 
-
-
-\newpage
-\section{Pflichtenheft}
-\subsection{Zielbestimmung}
-\begin{itemize}
-	\item Projektbeschreibung
-	\item IST-Zustand
-	\item SOLL-Zustand
-	\item NICHT-Ziele (Abgrenzungskriterien)
-\end{itemize}
-\subsection{Produkteinsatz und Umgebung}
-\begin{itemize}
-	\item Anwendungsgebiet
-	\item Zielgruppen
-	\item Betriebsbedingungen
-	\item Hard-/Softwareumgebung
-\end{itemize}
-\subsection{Funktionalitäten}
-\begin{itemize}
-	\item MUSS-Anforderungen
-	\begin{itemize}
-		\item Funktional
-		\item Nicht-funktional
-	\end{itemize}
-	\item KANN-Anforderungen
-	\begin{itemize}
-		\item Funktional
-		\item Nicht-funktional
-	\end{itemize}
-\end{itemize}
-\subsection{Testszenarien und Testfälle}
-\begin{itemize}
-	\item Beschreibung der Testmethodik
-	\item Testfall 1
-	\item Testfall 2
-	\item \ldots
-\end{itemize}
-\subsection{Liefervereinbarung}
-\begin{itemize}
-	\item Lieferumfang
-	\item Modus
-	\item Verteilung(Deployment)
-\end{itemize}
-
 \newpage
 \section{Planung}
 \subsection{Projektstrukturplan}
@@ -201,9 +156,9 @@ Die Abnahmekriterien wurden von unserem Auftraggeber so gesetzt, dass es einen P
 \subsection{Pläne zur Evaluierung}
 Zuerst wollen wird die Daten auf unserem Arduino auslesen und diese dann mit Hilfe eines Wlan Moduls an unsere Website senden.
 
-
-\chapter{Brutkasten}
+\newpage
 \def \currentAuthor{Leonid Hammer}
+\chapter{Brutkasten}
  Hier werden wir uns dem Aufbau, der Planung und  Ausführung des Brutkastens widmen. 
 \section{Equipment Liste}
 Um mehr über die einzelnen Komponenten zu erfahren verweisen wir auf eingesetzte Technologien. 
@@ -277,19 +232,15 @@ Plexiglas ist ebenso Kostengünstiger als eine herkömmliche Glasscheibe. Ebenso
 
 
 \chapter{Eingesetzte Technologien} \label{sec:tech}
-\begin{itemize}
-	\item Kurzbeschreibung aller Technologien, die verwendet wurden.
-	\item Technologien die aus dem Unterricht bekannt sind, nur nennen und deren  Einsatzzweck im Projekt beschreiben, nicht die Technologien selbst.
-	\item Technologien die aus dem Unterricht nicht bekannt sind, im Detail beschreiben incl. deren Einsatz im Projekt
-	\item Fokus aus eingesetzten Frameworks
-\end{itemize}
 
 \input{inp_tech.tex}
 
 
 
-\chapter{Forschung und Findung eines geeigneten Zuchtinsekts}
+
+\newpage
 \def \currentAuthor{Leonid Hammer}
+\chapter{Forschung und Findung eines geeigneten Zuchtinsekts}
 Hier kommt es speziell darauf an, nicht nur ein geeignetes Zuchtinsekt für die Art Prototypen zu finden, sondern nämlich auch heraus zu finden, welche Art von Insekt am Ansprechendsten sein könnte für die Bevölkerung der westlichen Welt.
 
 \section{Verzehr von Insekten}
@@ -464,7 +415,7 @@ CRUD ist für alle Datenbankzugriffe verantwortlich die getätigt werden.
 \subsection{Yii2} \label{sec:YII2}
 
 \subsubsection{Was ist Yii}
-YII ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
+Yii ist ein high Performance PHP Framework welches vor allem für die Entwicklung im Web2.0 eingesetzt wird. Web 2.0 fördert das User aktiv im Web mitmachen. Diese können eigene Beiträge erstellen und diese auf der Website anzeigen lassen.\cite{Web_2}
 
 \subsubsection{Gii} \label{sec:gii}
 Gii ist der Yii eigene Model, Crud, Controller, Form, Module und Extension Generator. Mit Gii kann man sehr einfach eine Model Klasse mit einer unterliegenden Datenbanktabelle erstellen. Aus dieser Model Klasse kann man dann wiederum CRUD Befehle erzeugen. Mit Gii kann man die gesamte Grund MVC Struktur für Yii2 erzeugen und im weiterm Verlauf dann nach eigenen Wünschen verändern.
@@ -509,41 +460,6 @@ Hier ist unser ER-Diagramm
 Unser Protoyp wird getestet indem wir ihn einen Tag autonom laufen lassen und am Ende dieser 24 Stunden Periode alle Daten kontrollieren, ob diese Sinn machen und der Realität entsprechen. Um dies zu gewährleisten, bräuchten wir allerdings einen klimaregulierten Raum der CO2 messen kann.
 
 \subsection{Desing der Ausführungsumgebung}                                                                    Das Endprodukt sollte im Freien autonom funktionieren können. Das Setup für den Endbenutzer/in besteht aus dem Anstecken an eine Stromversorgungquelle und dem Verbinden mit dem Internet, sowie das Einsetzen der Insekten. Im weiteren Verlauf der Brutzeit muss der Benutzer/die Benutzerin die Insekten füttern. Unser Produkt übernimmt das Regulieren von Temperatur sowie CO2 Werte, damit die Insekten überleben können.
-
-\section{Detailentwurf}
-USE-Cases
-Klassendiagramme vom Domain-Klassendiagramm ableiten (incl. detaillierter Darstellung und Verwendung von Vererbungshierarchichen, abstrakten Klassen, Interfaces)
-\begin{itemize}
-	\item Sequenzdiagramme vom System-Sequenz-Diagramm ableiten
-	\item Aktivitätsdiagramme
-	\item Detaillierte Zustandsdiagramme für wichtige Klassen
-\end{itemize}
-
-Verwendung von CRC-Cards (Class, Responsibilities, Collaboration) für die Klassen
-\begin{itemize}
-	\item um Verantwortlichkeiten und Zusammenarbeit zwischen Klassen zu definieren und
-	\item um auf den Entwurf der Geschäftslogik zu fokussieren
-\end{itemize}
-
-Design-Klassen für jeden einzelnen USE-Case können z.B. sein:
-
-\begin{itemize}
-	\item UI-Klassen
-	\item Data-Access-Klassen
-	\item Entity-Klassen (Domain-Klassen)
-	\item Controller-Klassen
-	\item Business-Logik-Klassen
-	\item View-Klassen
-\end{itemize}
-
-Optimierung des Entwurfs (Modularisierung, Erweiterbarkeit, Lesbarkeit):
-
-\begin{itemize}
-	\item Kopplung optimieren
-	\item Kohäsion optimieren
-	\item SOLID
-	\item Entwurfsmuster einsetzen
-\end{itemize}
 
 \newpage
 \def \currentAuthor{Kevin Glatz}
@@ -596,29 +512,6 @@ Eine genauere Beschreibung der einzelnen Module und deren Programmierung folgen 
 
 
 \chapter{Implementierung}
-Detaillierte Beschreibung der Implementierung aller Teilkomponenten der Software entlang der zentralsten Use-Cases:
-
-\begin{itemize}
-	\item GUI-Implementierung
-	\item Controllerlogik
-	\item Geschäftslogik
-	\item Datenbankzugriffe
-\end{itemize}
-
-Detaillierte Beschreibung der Teststrategie (Testdriven Development):
-
-\begin{itemize}
-	\item UNIT-Tests (Funktional)
-	\item Integrationstests
-\end{itemize}
-
-Zu Codesequenzen:
-\begin{itemize}
-	\item kurze Codesequenzen direkt im Text (mit Zeilnnummern auf die man in der Beschreibung verweisen kann)
-	\item lange Codesequenzen in den Anhang (mit Zeilennummer) und darauf verweisen (wie z.B. hier)
-	
-	
-\end{itemize}
 
 \def \currentAuthor {Florian Tipotsch}
 
