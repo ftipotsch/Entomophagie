@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{laravel}
+URL: \url{https://laravel.com/docs/5.6}.
+
 \bibitem{W3schools}
 W3schools.
 \newblock URL: \url{https://www.w3schools.com/}.
